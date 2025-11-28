@@ -3,11 +3,15 @@ import { Header } from './components/Header.js';
 import { Footer } from './components/Footer.js';
 import { Home } from './pages/Home.js';
 import { Post } from './pages/Post.js';
+import { About } from './pages/About.js';
+import { Archive } from './pages/Archive.js';
 
 const app = document.querySelector('#app');
 
 const routes = {
   '/': Home,
+  '/about': About,
+  '/archive': Archive,
   '/post/:id': Post
 };
 
