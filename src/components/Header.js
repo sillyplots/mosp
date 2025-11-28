@@ -11,7 +11,6 @@ export function Header() {
         <nav>
           <ul style="list-style: none; display: flex; gap: var(--spacing-md);">
             <li><a href="/" style="font-family: var(--font-heading); font-weight: 700;">Home</a></li>
-            <li><a href="/about" style="font-family: var(--font-heading); font-weight: 700;">About</a></li>
             <li><a href="/archive" style="font-family: var(--font-heading); font-weight: 700;">Archive</a></li>
           </ul>
         </nav>

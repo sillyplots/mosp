@@ -13,11 +13,6 @@ export function Home() {
           we have courageously chosen to apply these powerful tools to problems that do not exist.
         </p>
 
-        <p style="max-width: 700px; margin-bottom: var(--spacing-lg);">
-          Our data scientists work tirelessly around the clock (mostly because they forgot to set a break condition in their while loops) 
-          to bring you correlations that imply absolutely nothing and predictive models that predict the past with 50% accuracy.
-        </p>
-
         <a href="/post/1" class="btn">Read Our Latest Findings</a>
       </section>
 
