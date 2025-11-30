@@ -5,7 +5,6 @@ export function Header() {
         <div class="logo">
           <a href="/" style="text-decoration: none;">
             <h1 style="font-size: clamp(1.2rem, 4vw, 1.5rem); letter-spacing: 1px; text-transform: uppercase;">Ministry of Silly Plots</h1>
-            <span style="font-size: 0.8rem; display: block; color: var(--color-secondary); font-family: var(--font-body); letter-spacing: 2px;">Department of Meaningless Analytics</span>
           </a>
         </div>
         <nav>
