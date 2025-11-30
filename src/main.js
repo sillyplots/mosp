@@ -42,6 +42,7 @@ function router() {
     </main>
     ${Footer()}
   `;
+  window.scrollTo(0, 0);
 }
 
 // Handle navigation
