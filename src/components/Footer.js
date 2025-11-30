@@ -1,7 +1,7 @@
 export function Footer() {
   const year = new Date().getFullYear();
   return `
-    <footer style="border-top: 1px solid var(--color-border); padding: var(--spacing-lg) 0; margin-top: auto; background-color: #eaeaea;">
+    <footer style="border-top: 1px solid var(--color-border); padding: var(--spacing-lg) var(--spacing-md); margin-top: auto; background-color: #eaeaea;">
       <div class="container text-center">
         <p style="font-size: 0.9rem; color: #666;">
           &copy; ${year} Ministry of Silly Plots. All rights reserved, unfortunately.

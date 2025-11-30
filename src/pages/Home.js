@@ -1,14 +1,12 @@
 export function Home() {
   return `
     <div class="container">
-      <section class="hero" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: var(--spacing-xl);">
-        <div style="border: 8px double var(--color-primary); padding: 10px; background: white; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); max-width: 600px; margin-bottom: var(--spacing-lg);">
+      <section class="hero" style="text-align: center; padding: var(--spacing-xl) 0; margin-bottom: var(--spacing-xl);">
+        <div style="border: 8px double var(--color-primary); padding: 10px; background: white; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto var(--spacing-lg);">
           <img src="/public/ministry_hero.png" alt="The Minister of Silly Plots" style="width: 100%; height: auto; display: block; filter: sepia(0.2);">
         </div>
-        
-        <h2 style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">Serious Analysis of Ridiculous Subjects</h2>
-        
-        <p style="max-width: 700px; font-size: 1.2rem; margin-bottom: var(--spacing-lg);">
+        <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--spacing-md); color: var(--color-primary);">Serious Analysis of Ridiculous Subjects</h2>
+        <p style="font-size: clamp(1rem, 3vw, 1.25rem); max-width: 700px; margin: 0 auto var(--spacing-lg); color: #555;">
           Welcome to the Ministry. In an era where Artificial Intelligence promises to solve humanity's greatest challenges, 
           we have courageously chosen to apply these powerful tools to problems that do not exist.
         </p>
