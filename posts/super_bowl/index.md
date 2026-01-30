@@ -2,55 +2,103 @@
 
 > **Department of Stuperlatives** | January 2026
 
-We often talk about "Home Field Advantage," but we rarely control for **"Home Brew Advantage."**
+I’ve always suspected that New England’s dominance wasn't just about Brady or Belichick. It was about something deeper. Something roasted. Something glazed.
 
-As the New England Patriots prepare to face the Seattle Seahawks in Super Bowl LX, the narrative is focused on X's and O's. But the real story is hidden in the geography of caffeine.
+As a Patriots fan, I know the spiritual power of a rush-hour Dunkin’ run. And as a data scientist, I know that geography is destiny. So, with Super Bowl LX approaching—a matchup between the **New England Patriots** (the spiritual home of Dunkin') and the **Seattle Seahawks** (the literal home of Starbucks)—I decided to stop guessing and start calculating.
 
-Using a custom geospatial gravity model, we analyzed every play of the 2025 season to answer a simple question: **Do teams perform better when they are close to their preferred coffee chain?**
+I built a geospatial gravity model to answer a simple question: **Do these teams actually perform better when they are physically closer to their preferred coffee chain?**
+
+The answer is yes. And frankly, the data is terrifying.
 
 ## The Theory
 
-*   **The Patriots Run on Dunkin':** New England's cultural identity is inextricably linked to Dunkin' Donuts.
-*   **The Legion of Brew:** Seattle is the birthplace of Starbucks. The Seahawks should thrive in its presence.
+The hypothesis is simple:
+1.  **The Patriots Run on Dunkin':** Their offense should be more efficient in environments saturated with Dunkin’ Donuts.
+2.  **The Legion of Brew:** The Seahawks defense should thrive in environments saturated with Starbucks.
 
-We utilized an **Interference-Adjusted Gravity Model** to calculate the "Dunkin' Gravity" and "Starbucks Gravity" for every stadium in the NFL.
+To test this, I couldn't just count the number of stores nearby. A Starbucks across the street matters more than one ten miles away. I needed physics.
 
-[Interactive Gravity Map](assets/coffee_force_field_map_all.html)
+## The Coffee Gravity Model
 
-## The Findings (Away Games Only)
+I employed an **Interference-Adjusted Exponential Decay Model**. It sounds complicated, but it’s just a fancy way of saying: "Coffee shops are like planets, and stadiums are like spaceships."
 
-To test this rigorously, we looked **only at Away Games** to remove Home Field Advantage bias. The results were statistically startling.
+The gravitational pull $G$ for a given chain is calculated as:
+
+$$ G_{chain} = \sum_{i=0}^{n} M_i \cdot e^{-0.5 \cdot d_i} $$
+
+Basically, I calculated the distance from every stadium to every Starbucks and Dunkin' in America. I also added an **Interference Term**: if a Dunkin' and a Starbucks are right next to each other, they cancel each other out. We’re looking for *pure* signal here.
+
+The result is a **Net Gravity Score** for every stadium. Positive values mean you're in Dunkin' Country. Negative values mean you're in Starbucks Territory.
+
+<div class="row">
+  <div class="col-md-6">
+    <img src="assets/screenshots/New_England_Patriots_Gillette_Stadium.png" alt="Gillette Stadium" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+    <p style="text-align: center; font-size: 0.9em; color: #666;"><em>Gillette Stadium: A Dunkin' Fortress.</em></p>
+  </div>
+  <div class="col-md-6">
+    <img src="assets/screenshots/Seattle_Seahawks_Lumen_Field.png" alt="Lumen Field" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+    <p style="text-align: center; font-size: 0.9em; color: #666;"><em>Lumen Field: The Heart of the Empire.</em></p>
+  </div>
+</div>
+
+[Explore the Interactive Coffee Gravity Map](assets/coffee_force_field_map_all.html)
+
+## The Results
+
+I ran the numbers for the 2025 season. To make sure I wasn't just measuring Home Field Advantage (since obviously the Pats play at home near Dunkin'), I filtered the data to **Away Games Only**. Everything you see below is strictly about how they perform on the road.
+
+<img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 100%; border-radius: 8px; margin: 20px 0;">
 
 ### 1. The Patriots Offense Collapses Without Dunkin'
-In Dunkin-dominant zones (Net Gravity > 0), the Patriots offense is efficient, posting a positive Rush EPA (+0.053). But when they enter a Starbucks-dominant zone? **They crumble.**
 
-*   **Rush EPA:** Drops to **-0.186** (a disaster).
-*   **Scoring:** Drops from 31.3 PPG to **24.0 PPG**.
-*   **Conclusion:** The "Runs on Dunkin" slogan is not marketing. It is a biological constraint.
+The difference is night and day. When the Patriots travel to "Dunkin' Zones" (Net Gravity > 0), they are an elite offense. When they enter "Starbucks Zones"? They crumble.
+
+| Metric | Dunkin' Zone | Starbucks Zone | The "Withdrawal" Effect |
+| :--- | :---: | :---: | :---: |
+| **Points Per Game** | 31.3 | 24.0 | **-7.3** |
+| **Total Yds/Game** | 409.7 | 338.5 | **-71.2** |
+| **Rush EPA/Play** | +0.053 | -0.186 | **-0.239** |
+
+The "Runs on Dunkin" slogan isn't marketing. It's a biological constraint.
 
 ### 2. The Seahawks Defense Feeds on Starbucks
-The "Legion of Brew" is real. When playing in Starbucks territory (Net Gravity < 0), the Seahawks defense transforms.
 
-*   **Turnovers:** **1.8 per game** (nearly double the 1.0 rate in Dunkin zones).
-*   **Opponent Passer Rating:** Held to a miserable **61.6**.
-*   **Conclusion:** The caffeine density correlates directly with defensive chaos.
+The "Legion of Brew" is real. When the Seahawks defense plays in high-Starbucks environments, they transform into monsters.
+
+| Metric | Dunkin' Zone | Starbucks Zone | The "Caffeine" Effect |
+| :--- | :---: | :---: | :---: |
+| **Turnovers/Game** | 1.00 | **1.80** | **+80%** |
+| **Opp. Passer Rating** | 70.3 | **61.6** | **-8.7** |
 
 ### 3. The Sam Darnold Paradox
-In a bizarre twist, Seahawks QB Sam Darnold creates a strategic conflict. While his *defense* loves Starbucks, Darnold *hates* it.
-*   **Dunkin Zone Rating:** 124.4 (Elite)
-*   **Starbucks Zone Rating:** 75.4 (Benchable)
 
-## The Super Bowl LX Forecast
+Here is where it gets weird. While the Seahawks *defense* loves Starbucks, their Quarterback, **Sam Darnold**, apparently hates it.
 
-**Location:** Levi's Stadium, Santa Clara, CA.
-**Gravity Score:** **-5.80** (The "Starbucks Death Zone").
+| Metric | Dunkin' Zone | Starbucks Zone | Delta |
+| :--- | :---: | :---: | :---: |
+| **Passer Rating** | **124.4** | 75.4 | -49.0 |
+| **TD / INT Ratio** | **5.50** | 0.57 | -4.93 |
 
-Levi's Stadium is the second-strongest Starbucks stronghold in the league.
+In Dunkin' zones, Darnold plays like an MVP. In Starbucks zones, he plays like... well, Sam Darnold. My working theory is that he's still seeing ghosts from his time on the East Coast and subconsciously craves a Coolatta.
 
-**Prediction:**
-The environmental factors overwhelmingly favor the **Seahawks Defense**. Expect a low-scoring, turnover-heavy game where the Patriots offense struggles to move the ball. However, the game will stay close because Sam Darnold will likely throw at least one baffling interception in the coffee-heavy air.
+## Super Bowl LX Preview
 
-**Final Pick:** Seahawks 20, Patriots 13.
+So what does this mean for the big game?
 
----
-*See `docs/robust_coffee_metrics.pdf` for the full scientific whitepaper.*
+Super Bowl LX is at **Levi's Stadium** in Santa Clara. I checked the coordinates.
+
+*   **Net Gravity:** **-5.80**
+*   **Verdict:** **Starbucks Stronghold**
+
+<img src="assets/screenshots/San_Francisco_49ers_Levi's_Stadium.png" alt="Levi's Stadium" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+
+Levi's Stadium is the second-strongest Starbucks fortress in the entire league, behind only Seattle itself. The environment is overwhelmingly hostile to the Patriots.
+
+**My Prediction:**
+Based purely on the coffee data, the **Seahawks Defense** will dominate. Expect the Patriots offense to look sluggish and disjointed. However, Sam Darnold will likely throw at least one baffling interception, keeping the game closer than it should be.
+
+**Final Score:** Seahawks 20, Patriots 13.
+
+***
+
+*All data and code for this analysis is open source. You can grab the python scripts and SQL queries from the repo and verify the findings yourself. Because science.*
