@@ -49,7 +49,8 @@ The result is a **Net Gravity Score** for every stadium. Positive values mean yo
   </div>
 </div>
 
-[Explore the Interactive Coffee Gravity Map](assets/coffee_force_field_map_all.html)
+<iframe src="assets/coffee_force_field_map_all.html" width="100%" height="600px" style="border: 1px solid #ddd; border-radius: 8px; margin-top: 20px;"></iframe>
+<p style="text-align: center; font-size: 0.9em; margin-top: 5px; margin-bottom: 30px;"><a href="assets/coffee_force_field_map_all.html" target="_blank">Open Interactive Map in Full Screen</a></p>
 
 <img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 60%; display: block; margin: 20px auto; border-radius: 8px;">
 
