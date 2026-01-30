@@ -28,9 +28,7 @@ I employed an **Interference-Adjusted Exponential Decay Model**. It sounds compl
 
 The gravitational pull "G" for a given chain is calculated as:
 
-```math
-G_chain = Sum( Mass_i * e^(-0.5 * distance_i) )
-```
+<img src="assets/gravity_formula.png" alt="Coffee Gravity Formula" style="width: 60%; display: block; margin: 20px auto;">
 
 Basically, I calculated the distance from every stadium to every Starbucks and Dunkin' in America. I also added an **Interference Term**: if a Dunkin' and a Starbucks are right next to each other, they cancel each other out. We’re looking for *pure* signal here.
 
@@ -53,7 +51,7 @@ The result is a **Net Gravity Score** for every stadium. Positive values mean yo
 
 I ran the numbers for the 2025 season. To make sure I wasn't just measuring Home Field Advantage (since obviously the Pats play at home near Dunkin'), I filtered the data to **Away Games Only**. Everything you see below is strictly about how they perform on the road.
 
-<img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+<img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 80%; display: block; margin: 20px auto; border-radius: 8px;">
 
 ### 1. The Patriots Offense Collapses Without Dunkin'
 
