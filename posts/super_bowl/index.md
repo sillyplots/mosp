@@ -47,11 +47,11 @@ The result is a **Net Gravity Score** for every stadium. Positive values mean yo
 
 [Explore the Interactive Coffee Gravity Map](assets/coffee_force_field_map_all.html)
 
+<img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 60%; display: block; margin: 20px auto; border-radius: 8px;">
+
 ## The Results
 
 I ran the numbers for the 2025 season. To make sure I wasn't just measuring Home Field Advantage (since obviously the Pats play at home near Dunkin'), I filtered the data to **Away Games Only**. Everything you see below is strictly about how they perform on the road.
-
-<img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="width: 80%; display: block; margin: 20px auto; border-radius: 8px;">
 
 ### 1. The Patriots Offense Collapses Without Dunkin'
 
