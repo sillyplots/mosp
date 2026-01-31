@@ -8,7 +8,7 @@ export function Home() {
         <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--spacing-md); color: var(--color-primary);">Serious Analysis of Ridiculous Subjects</h2>
         <p style="font-size: clamp(1rem, 3vw, 1.25rem); max-width: 700px; margin: 0 auto var(--spacing-lg); color: #555;">
           Welcome to the Ministry. In an era when AI promises to boost productivity and provide tangible business value, 
-          we are committed to applying the latest state of the art technologies exclusively to the meaningless and the absurd.
+          we are committed to applying the latest state of the art technologies and statistical expertise to exclusively the meaningless and the absurd.
         </p>
 
         <a href="/post/superbowl" class="btn">Read Our Latest Findings</a>
