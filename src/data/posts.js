@@ -11,9 +11,11 @@ const superBowlMd = `# Home Brew Advantage: The Gravitational Influence of Regio
   A new study identifies a "Home Brew Advantage" in the NFL, where the New England Patriots and Seattle Seahawks perform significantly better in environments dominated by their region's preferred coffee chain. The research suggests the Patriots' offense is fueled by Dunkin', while the Seahawks' defense thrives in Starbucks territory.
 </div>
 
-For decades, sports analysts have scrutinized every variable affecting NFL performance—from turf types to wind shear. But a new study from the Ministry of Silly Plots suggests the most potent performance enhancer might be brewing in the parking lot. The research, titled "Home Brew Advantage," identifies a robust correlation between the regional density of coffee chains—specifically Dunkin' and Starbucks—and the performance of the New England Patriots and Seattle Seahawks.
+In the post-Moneyball era no sport is safe from the overeager application of advanced analytics, and the NFL is no exception. Having fully embraced "Next Gen Stats," there's not a game that goes by where you don't hear some analyst citing an absurdly specific stat like "pass rate over expected in the fourth quarter against the blitz" or pointing to "post game win expectancy" to explain away a loss. In 2023 they even analyzed how Travis Kelce performed when Taylor Swift was and wasn't in attendance. 
 
-The study introduces a novel **"Coffee Gravity Model"** to quantify the "caffeinated environment" of every NFL stadium. By measuring the proximity and density of thousands of coffee shop locations, the model assigns a "Net Coffee Gravity" score to each venue. The results reveal that NFL stadiums are perfectly split into two distinct camps, determined by their home region's preferred brew.
+At the Ministry of Silly Plots, our motto is to apply serious analysis to ridiculous subjects. Now that the NFL is doing the opposite, we have ourselves a golden opportunity.
+
+This paper proposes a novel environmental variable not yet considered by the NFL's best analytics experts: the **"Regional Coffee Chain Gravitational Pull."** We hypothesize that the regional dominance of major coffee chains exerts a measurable influence on team performance, specifically for teams with strong cultural associations to those brands. The upcoming Super Bowl matchup between the Dunkin' loving New England Patriots and Starbucks obsessed Seattle Seahawks provides a perfect opportunity to test this.
 
 <div style="text-align: center; margin: 30px 0;">
   <img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="max-width: 500px; width: 100%; border-radius: 8px; border: 1px solid #ddd; display: inline-block;">
