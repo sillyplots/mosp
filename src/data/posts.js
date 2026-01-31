@@ -20,12 +20,14 @@ This paper proposes a novel environmental variable not yet considered by the NFL
 ## Methodology
 To quantify the "net coffee gravity" of each stadium, we employed an **Interference-Adjusted Exponential Decay Model**. We calculated the gravitational pull of every Starbucks and Dunkin' location in the US within 10 miles of all 30 NFL stadiums, adjusting for distance and market interference.
 
-This interactive map lets you visualize the raw gravitational pull of each coffee chain surrounding each NFL stadium.
+This interactive map lets you visualize the raw gravitational pull of each coffee chain surrounding each NFL stadium. A good example is MetLife Stadium, which sits right on the border of a Dunkin' and Starbucks turf war. Its location in East Rutherford gives Dunkin' the slight edge due to the strong Dunkin' presence in New Jersey, but there's still a strong Starbucks gravitational pull from across the river in New York City.
 
 <iframe src="assets/coffee_force_field_map_all.html" style="width: 100%; height: 600px; border: none; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
 <div style="text-align: center; margin-bottom: 30px;">
   <a href="assets/coffee_force_field_map_all.html" target="_blank" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em;">View Full Screen Interactive Map</a>
 </div>
+
+An interesting finding from this analysis is that we see a perfect 50/50 split across the league in terms of which coffee chain has the gravitational advantage. The strongest gravity on either side belongs to the Seahawks' Lumen Field. Unsuprisingly, the Starbucks capital of the world doesn't have a single Dunkin' within a 10 mile radius (or even the entire state for that matter). On the Dunkin' side, we have the Ravens' M&T Bank Stadium in the top spot, with the Patriots' Gillette Stadium as a close second.
 
 <div style="text-align: center; margin: 30px 0;">
   <img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="max-width: 500px; width: 100%; border-radius: 8px; border: 1px solid #ddd; display: inline-block;">
