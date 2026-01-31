@@ -208,7 +208,7 @@ def generate_all_maps():
 
     # Initialize Global Map (Center of US roughly)
     # UPDATED: Focus on Super Bowl LX (Levi's Stadium)
-    m = folium.Map(location=[37.4032, -121.9698], zoom_start=11, tiles='CartoDB dark_matter')
+    m = folium.Map(location=[40.8135, -74.0745], zoom_start=11, tiles='CartoDB dark_matter')
     
     # Track processed teams
     processed_teams = set()

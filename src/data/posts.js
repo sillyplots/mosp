@@ -8,7 +8,7 @@ const superBowlMd = `# Home Brew Advantage: The Gravitational Influence of Regio
 
 <div style="background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; margin-bottom: 25px;">
   <strong>SUMMARY</strong><br>
-  A new study identifies a "Home Brew Advantage" in the NFL, where the New England Patriots and Seattle Seahawks perform significantly better in environments dominated by their region's preferred coffee chain. The research suggests the Patriots' offense is fueled by Dunkin', while the Seahawks' defense thrives in Starbucks territory.
+  A new study identifies a "Home Brew Advantage" in the NFL, where the New England Patriots and Seattle Seahawks perform significantly better in environments dominated by their region's preferred coffee chain. The research suggests the Patriots' offense is runs on Dunkin', while the Seahawks' defense thrives in Starbucks territory.
 </div>
 
 In the post-Moneyball era no sport is safe from the overeager application of advanced analytics, and the NFL is no exception. Having fully embraced "Next Gen Stats," there's not a game that goes by where you don't hear some analyst citing an absurdly specific stat like "pass rate over expected in the fourth quarter against the blitz" or pointing to "post game win expectancy" to explain away a loss. In 2023 they even analyzed how Travis Kelce performed when Taylor Swift was and wasn't in attendance. 
@@ -17,14 +17,19 @@ At the Ministry of Silly Plots, our motto is to apply serious analysis to ridicu
 
 This paper proposes a novel environmental variable not yet considered by the NFL's best analytics experts: the **"Regional Coffee Chain Gravitational Pull."** We hypothesize that the regional dominance of major coffee chains exerts a measurable influence on team performance, specifically for teams with strong cultural associations to those brands. The upcoming Super Bowl matchup between the Dunkin' loving New England Patriots and Starbucks obsessed Seattle Seahawks provides a perfect opportunity to test this.
 
-<div style="text-align: center; margin: 30px 0;">
-  <img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="max-width: 500px; width: 100%; border-radius: 8px; border: 1px solid #ddd; display: inline-block;">
-  <p style="font-style: italic; color: #666; margin-top: 10px;">Fig 1. The Home Brew Advantage: Net Coffee Gravity for all NFL teams.</p>
-</div>
+## Methodology
+To quantify the "net coffee gravity" of each stadium, we employed an **Interference-Adjusted Exponential Decay Model**. We calculated the gravitational pull of every Starbucks and Dunkin' location in the US within 10 miles of all 30 NFL stadiums, adjusting for distance and market interference.
+
+This interactive map lets you visualize the raw gravitational pull of each coffee chain surrounding each NFL stadium.
 
 <iframe src="assets/coffee_force_field_map_all.html" style="width: 100%; height: 600px; border: none; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
 <div style="text-align: center; margin-bottom: 30px;">
   <a href="assets/coffee_force_field_map_all.html" target="_blank" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9em;">View Full Screen Interactive Map</a>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+  <img src="assets/coffee_gravity_ranking_publication.jpeg" alt="Coffee Gravity Ranking" style="max-width: 500px; width: 100%; border-radius: 8px; border: 1px solid #ddd; display: inline-block;">
+  <p style="font-style: italic; color: #666; margin-top: 10px;">Fig 1. The Home Brew Advantage: Net Coffee Gravity for all NFL teams.</p>
 </div>
 
 
