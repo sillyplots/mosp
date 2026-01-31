@@ -207,7 +207,8 @@ def generate_all_maps():
     }
 
     # Initialize Global Map (Center of US roughly)
-    m = folium.Map(location=[39.8283, -98.5795], zoom_start=4, tiles='CartoDB dark_matter')
+    # UPDATED: Focus on Super Bowl LX (Levi's Stadium)
+    m = folium.Map(location=[37.4032, -121.9698], zoom_start=11, tiles='CartoDB dark_matter')
     
     # Track processed teams
     processed_teams = set()
@@ -510,14 +511,14 @@ def generate_all_maps():
             
             folium.Marker(
                 location=[center_lat, center_lng],
-                popup=folium.Popup(popup_html, max_width=250),
+                popup=folium.Popup(popup_html, max_width=250, show=(target_bq_name == "Levi's Stadium")),
                 icon=folium.CustomIcon(logo_url, icon_size=(30, 30))
             ).add_to(m)
 
     # ADD LEGEND
     legend_html = '''
     <div style="position: fixed; 
-         bottom: 30px; right: 30px; width: 280px; height: 210px; 
+         bottom: 30px; right: 30px; width: 210px; height: 160px; 
          border: 1px solid #ddd; z-index:9999; font-size:13px;
          background-color: white; opacity: 0.95;
          border-radius: 8px; padding: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); font-family: sans-serif;">
@@ -539,10 +540,6 @@ def generate_all_maps():
          <div style="margin-bottom: 10px;">
             <div style="background:radial-gradient(circle, rgba(0, 112, 74, 0.9) 0%, rgba(0, 112, 74, 0.4) 100%); width:20px; height:20px; display: inline-block; vertical-align: middle; margin-right: 8px; border-radius: 50%;"></div>
             <span style="vertical-align: middle;">Net Starbucks Force Field</span>
-         </div>
-         
-         <div style="font-size: 11px; color: #666; font-style: italic; border-top: 1px solid #eee; padding-top: 8px;">
-            <strong>Field Opacity</strong> represents the strength of the gravitational pull. Higher density = darker field.
          </div>
     </div>
     '''
