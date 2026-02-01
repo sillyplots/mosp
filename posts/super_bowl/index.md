@@ -4,11 +4,11 @@
 
 <div style="background-color: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; margin-bottom: 25px;">
   <strong>SUMMARY</strong><br>
-  Our new study identifies a "Home Brew Advantage" in the NFL, where the New England Patriots and Seattle Seahawks perform significantly better in environments dominated by their region's preferred coffee chain. The research suggests the Patriots' offense runs on Dunkin', while the Seahawks' defense thrives in Starbucks-rich environments. With Super Bowl LX being played in deep Starbucks territory, we investigate whether this environmental factor could be the key to victory.
+  Our new study identifies a "Home Brew Advantage" in the NFL, where teams exhibit a distinct performance advantage away from home if the surrounding environment is dominated by their region's preferred coffee chain. The research suggests the Patriots' offense runs on Dunkin', while the Seahawks' defense thrives in Starbucks-rich environments. With Super Bowl LX being played in deep Starbucks territory, we investigate whether this environmental factor could be the key to victory.
 </div>
 <a href="/posts/super_bowl/docs/robust_coffee_metrics.pdf" style="display: block; text-align: center; background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; margin: 20px auto; width: fit-content;" target="_blank">Download Full PDF Report</a>
 
-In the post-Moneyball era no sport is safe from the overeager application of advanced analytics, and the NFL is no exception. Having fully embraced "Next Gen Stats," there's not a game that goes by where you don't hear some analyst citing an absurdly-specific-to-the-point-of-being-meaningless stat like "completion rate over expected when trailing by one score or less in the fourth quarter against the blitz" or pointing to "post game win expectancy" to explain away a loss. In 2023 they even analyzed how Travis Kelce performed when Taylor Swift was and wasn't in attendance. 
+In the post-Moneyball era, no sport is safe from the overeager application of advanced analytics, and the NFL is no exception. Having fully embraced "Next Gen Stats," there's not a game that goes by where you don't hear some analyst citing an absurdly-specific-to-the-point-of-being-meaningless stat like "completion rate over expected when trailing by one score or less in the fourth quarter against the blitz" or pointing to "post game win expectancy" to explain away a loss. In 2023 they even analyzed how Travis Kelce performed when Taylor Swift was and wasn't in attendance. 
 
 At the Ministry of Silly Plots, our motto is to apply serious analysis to ridiculous subjects. Now that the NFL is doing the opposite, we have ourselves a golden opportunity.
 
