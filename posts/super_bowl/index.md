@@ -17,6 +17,11 @@ This [working paper](/posts/super_bowl/docs/robust_coffee_metrics.pdf) (pending 
 ## Methodology
 To quantify the "net coffee gravity" of each stadium, we employ an **Interference-Adjusted Exponential Decay Model**. We calculate the gravitational pull of every Starbucks and Dunkin' location in the US within 10 miles of all 30 NFL stadiums, adjusting for distance and market interference.
 
+<div style="text-align: center; margin: 25px 0; padding: 20px; background-color: #f8f9fa; border-radius: 8px;">
+  <img src="https://latex.codecogs.com/svg.latex?\Large&space;G_{chain}=\sum_{i=0}^{n}\left(M_i-\left(1-\frac{d_{comp}}{0.5}\right)\right)\cdot&space;e^{-0.5\cdot&space;d_i}" alt="Gravity Equation" style="max-width: 100%;">
+  <p style="font-size: 0.9em; color: #666; margin-top: 10px;"><em>The Proprietary Coffee Gravity Equation</em></p>
+</div>
+
 This interactive map lets you visualize the raw gravitational pull of each coffee chain surrounding each NFL stadium. A good example is MetLife Stadium, which sits right on the border of a Dunkin' and Starbucks turf war. Its location in East Rutherford gives Dunkin' the slight edge due to the strong Dunkin' presence in New Jersey, but there's still a strong Starbucks gravitational pull from across the river in New York City.
 
 <iframe src="assets/coffee_force_field_map_all.html" style="width: 100%; height: 600px; border: none; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
