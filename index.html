@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Home
+---
+<div class="container">
+  <section class="hero-section">
+    <div class="hero-image-container">
+      <img src="/ministry_hero.png" alt="The Minister of Silly Plots"
+        style="width: 100%; height: auto; display: block; filter: sepia(0.2);">
+    </div>
+    <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--spacing-md); color: var(--color-primary);">
+      Serious Analysis of Ridiculous Subjects</h2>
+    <p style="font-size: clamp(1rem, 3vw, 1.25rem); max-width: 700px; margin: 0 auto var(--spacing-lg); color: #555;">
+      Welcome to the Ministry of Silly Plots. At a time when AI promises to 10x productivity and unlock transformative
+      business insights,
+      we strive to apply the latest state of the art technologies and statistical expertise to only the most absurd use
+      cases.
+      We are committed to ensuring our work is supported by rock solid empirical evidence while having absolutely zero
+      practical application.
+    </p>
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-51SS7GYZSW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <a href="/post/superbowl" class="btn">Read Our Latest Findings</a>
+  </section>
 
-    gtag('config', 'G-51SS7GYZSW');
-  </script>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Ministry of Silly Plots</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/src/style.css">
-</head>
+  <section class="latest-posts">
+    <h3 style="border-bottom: 2px solid var(--color-accent); display: inline-block; margin-bottom: var(--spacing-md);">
+      Recent Publications</h3>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
-</html>
+    <div
+      style="background: white; border: 1px solid var(--color-border); padding: var(--spacing-md); margin-bottom: var(--spacing-md);">
+      <h4><a href="/post/superbowl">Home Brew Advantage: The Gravitational Influence of Regional Coffee Chains on Super
+          Bowl LX</a></h4>
+      <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">Published: Jan 30, 2026</p>
+    </div>
+  </section>
+</div>

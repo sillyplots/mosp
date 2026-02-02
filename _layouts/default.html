@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-51SS7GYZSW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-51SS7GYZSW');
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header text-center">
+        <div class="container">
+            <h1 class="logo">
+                <a href="/" style="text-decoration: none; color: inherit;">The Ministry of Silly Plots</a>
+            </h1>
+            <p style="font-style: italic; margin-top: 0.5rem; color: #666;">Serious Analysis of Ridiculous Subjects</p>
+            <div class="social-links" style="margin-top: 1rem; font-size: 1.2rem;">
+                {% if site.social.twitter %}
+                <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer"
+                    style="margin: 0 0.5rem; color: #666; text-decoration: none;" aria-label="Twitter"><i
+                        class="fab fa-twitter"></i></a>
+                {% endif %}
+                {% if site.social.instagram %}
+                <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer"
+                    style="margin: 0 0.5rem; color: #666; text-decoration: none;" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                {% endif %}
+                {% if site.social.github %}
+                <a href="{{ site.social.github }}" target="_blank" rel="noopener noreferrer"
+                    style="margin: 0 0.5rem; color: #666; text-decoration: none;" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        {{ content }}
+    </main>
+
+    <footer class="text-center mt-lg mb-lg"
+        style="font-size: 0.9rem; color: #666; border-top: 1px solid #ddd; padding-top: 2rem;">
+        <p>&copy; {{ site.time | date: '%Y' }} The Ministry of Silly Plots. Keep it silly.</p>
+    </footer>
+
+</body>
+
+</html>

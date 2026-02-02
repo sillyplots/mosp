@@ -1,0 +1,22 @@
+title: The Ministry of Silly Plots
+description: Applying serious analysis to ridiculous subjects.
+theme: null
+markdown: kramdown
+permalink: /post/:title/
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - src
+  - vite.config.js
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - migrate_content.py
+  - vendor
+
+social:
+  twitter: https://twitter.com/sillyplots
+  instagram: https://instagram.com/sillyplots
+  github: https://github.com/sillyplots

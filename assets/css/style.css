@@ -155,16 +155,33 @@ a:hover {
   line-height: 1.6;
 }
 
-.post-content h3 {
+/* Global Content Spacing */
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
 }
 
-.post-content p {
+main h1 {
+  margin-top: 0;
+  /* First title shouldn't have top margin if it's h1 */
+}
+
+main p,
+main ul,
+main ol {
   margin-bottom: var(--spacing-md);
 }
 
-/* Post article padding removed */
+main li {
+  margin-bottom: 0.25rem;
+}
+
+/* Post Styles (Legacy/Specific overrides if needed) */
 
 /* Hero Styles */
 .site-header {
