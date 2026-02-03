@@ -132,13 +132,6 @@ The analysis utilizes data from the 2025 NFL Season (Regular Season + Playoffs).
 
 \section{Results}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{coffee_gravity_ranking_publication.jpeg}
-    \caption{Home Brew Advantage: Net Coffee Gravity for all NFL teams. Stadiums below the dashed line have higher Dunkin' gravity; stadiums above the dashed line have higher Starbucks gravity.}
-    \label{fig:ranking}
-\end{figure}
-
 \subsection{The Patriots ``Run on Dunkin'' (Confirmed)}
 
 Analyzing \textbf{Away Games Only}, the Patriots offense shows a drastic drop in production when entering ``Starbucks Gravitational Zones'' ($G_{net} < 0$). This is primarily driven by a collapse in the rushing attack.
@@ -261,6 +254,15 @@ To reproduce this analysis from scratch:
 
 \newpage
 \appendix
+\section{Net Gravity Rankings}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{coffee_gravity_ranking_publication.jpeg}
+    \caption{Home Brew Advantage: Net Coffee Gravity for all NFL teams. Stadiums below the dashed line have higher Dunkin' gravity; stadiums above the dashed line have higher Starbucks gravity.}
+    \label{fig:ranking}
+\end{figure}
+
 \section{Algorithm Reference}
 
 To ensure full reproducibility and transparency of the Coffee Gravity Model, we include the core Python implementations used for data collection and analysis.
