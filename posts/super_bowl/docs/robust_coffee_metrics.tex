@@ -44,7 +44,7 @@
 
 % Title Information
 \title{Home Brew Advantage: The Gravitational Influence of Regional Coffee Chains on Super Bowl LX}
-\author{Charlie Thompson \\ \textit{Chief Disinformation Officer, Ministry of Silly Plots}}
+\author{\textit{Ministry of Silly Plots}}
 \date{January 28, 2026}
 
 \begin{document}
@@ -184,7 +184,7 @@ Conversely, the Seahawks defense exhibits elite performance metrics in ``Starbuc
 
 \subsection{Outlier Discovery: The Sam Darnold Paradox}
 
-An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his team's defense, Darnold exhibits a strong \textbf{negative correlation} with Starbucks Gravity. While more research is needed to determine the cause of this phenomenon, one hypothesis is that Darnold is still seeing ghosts from his time on the East Coast with the Jets and still has an innate affinity for Dunkin'.
+An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his team's defense, Darnold exhibits a strong \textbf{negative correlation} with Starbucks Gravity.
 
 \begin{table}[H]
     \centering
@@ -200,7 +200,7 @@ An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his team
     \end{tabular}
 \end{table}
 
-\textbf{Interpretation:} This finding is \textbf{Anomalous yet Distinct}. While the Seahawks \emph{Defense} thrives in Starbucks zones, their Quarterback appears to suffer an allergic reaction to the same environment (75.4 Rating vs 124.4 in Dunkin' zones). This suggests a fundamental biochemical incompatibility between Darnold and the Starbucks ecosystem.
+\textbf{Interpretation:} Darnold's passer rating drops by a staggering \textbf{49 points} (124.4 to 75.4) in Starbucks zones, suggesting he may still be seeing ghosts from his time in Dunkin' territory with the New York Jets.
 
 \section{Discussion: Super Bowl LX Preview}
 
@@ -228,7 +228,7 @@ Based on the robust ``Away Games Only'' model, we project the following outcomes
 All analysis code is available in the project repository at:
 
 \begin{center}
-\url{https://github.com/charlie86/mosp/tree/main/posts/super_bowl}
+\url{https://github.com/charlie86/sillyplots/tree/main/posts/super_bowl}
 \end{center}
 
 \subsection{Order of Operations}
@@ -247,16 +247,169 @@ To reproduce this analysis from scratch:
 
 \noindent \textbf{ETL Scripts:}
 \begin{itemize}
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/etl/load_data.py}{\texttt{etl/load\_data.py}} -- Loads nflverse PBP data to BigQuery
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/etl/scrape_coffee_locations.py}{\texttt{etl/scrape\_coffee\_locations.py}} -- Scrapes coffee locations via Google Maps API
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/etl/load_data.py}{\texttt{etl/load\_data.py}} -- Loads nflverse PBP data to BigQuery
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/etl/scrape_coffee_locations.py}{\texttt{etl/scrape\_coffee\_locations.py}} -- Scrapes coffee locations via Google Maps API
 \end{itemize}
 
 \noindent \textbf{Analysis \& Visualization:}
 \begin{itemize}
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/analysis/robust_coffee_check.py}{\texttt{analysis/robust\_coffee\_check.py}} -- Main analysis script
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/analysis/reproduce_robust_metrics.sql}{\texttt{analysis/reproduce\_robust\_metrics.sql}} -- Reproducible SQL queries
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/visualization/generate_map.py}{\texttt{visualization/generate\_map.py}} -- Interactive gravity field map
-    \item \href{https://github.com/charlie86/mosp/blob/main/posts/super_bowl/visualization/plot_gravity_chart.py}{\texttt{visualization/plot\_gravity\_chart.py}} -- Net gravity ranking chart
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/analysis/robust_coffee_check.py}{\texttt{analysis/robust\_coffee\_check.py}} -- Main analysis script
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/analysis/reproduce_robust_metrics.sql}{\texttt{analysis/reproduce\_robust\_metrics.sql}} -- Reproducible SQL queries
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/visualization/generate_map.py}{\texttt{visualization/generate\_map.py}} -- Interactive gravity field map
+    \item \href{https://github.com/charlie86/sillyplots/blob/main/posts/super_bowl/visualization/plot_gravity_chart.py}{\texttt{visualization/plot\_gravity\_chart.py}} -- Net gravity ranking chart
 \end{itemize}
+
+\newpage
+\appendix
+\section{Algorithm Reference}
+
+To ensure full reproducibility and transparency of the Coffee Gravity Model, we include the core Python implementations used for data collection and analysis.
+
+\subsection{The Gravity Model}
+The core interference-adjusted gravity calculation. Note the specific handling of the ``Interference Radius'' to model the Dunkin-Starbucks exclusion principle.
+
+\begin{lstlisting}[language=Python, caption=Coffee Gravity Calculation]
+def calculate_stadium_gravity_single(stadium_lat, stadium_lng, d_locs, s_locs):
+    """
+    Calculate net gravity at a stadium using the interference model
+    Returns: (dunkin_gravity, starbucks_gravity, net_gravity)
+    """
+    INTERFERENCE_RADIUS = 0.5  # miles
+    INTERFERENCE_STRENGTH = 1.0
+    
+    if len(d_locs) == 0 and len(s_locs) == 0:
+        return 0.0, 0.0, 0.0
+    
+    # Initialize masses
+    d_masses = np.ones(len(d_locs))
+    s_masses = np.ones(len(s_locs))
+    
+    # Apply interference reduction
+    if len(d_locs) > 0 and len(s_locs) > 0:
+        for i, d in enumerate(d_locs):
+            for j, s in enumerate(s_locs):
+                dist = simple_hav(d['lng'], d['lat'], s['lng'], s['lat'])
+                if dist < INTERFERENCE_RADIUS:
+                    reduction = INTERFERENCE_STRENGTH * (1.0 - dist/INTERFERENCE_RADIUS)
+                    d_masses[i] -= reduction
+                    s_masses[j] -= reduction
+        d_masses = np.maximum(d_masses, 0.0)
+        s_masses = np.maximum(s_masses, 0.0)
+    
+    # Calculate gravity at stadium location
+    dunkin_gravity = 0.0
+    starbucks_gravity = 0.0
+    
+    for i, loc in enumerate(d_locs):
+        if d_masses[i] > 0:
+            dist = simple_hav(loc['lng'], loc['lat'], stadium_lng, stadium_lat)
+            dunkin_gravity += d_masses[i] * np.exp(-0.5 * dist)
+    
+    for i, loc in enumerate(s_locs):
+        if s_masses[i] > 0:
+            dist = simple_hav(loc['lng'], loc['lat'], stadium_lng, stadium_lat)
+            starbucks_gravity += s_masses[i] * np.exp(-0.5 * dist)
+    
+    # Net Gravity: Starbucks (Positive) - Dunkin (Negative)
+    net_gravity = starbucks_gravity - dunkin_gravity
+    return dunkin_gravity, starbucks_gravity, net_gravity
+\end{lstlisting}
+
+\subsection{Geospatial Data Collection}
+We utilized the Google Places API to identify all relevant locations within a 10-mile radius.
+
+\begin{lstlisting}[language=Python, caption=Google Maps API Iteration]
+def find_all_places_nearby(gmaps, lat, lng, keyword, radius_meters):
+    places = []
+    next_page_token = None
+    
+    while True:
+        try:
+            params = {
+                'location': (lat, lng),
+                'keyword': keyword,
+                'radius': radius_meters,
+                'type': 'restaurant'
+            }
+            if next_page_token:
+                params['page_token'] = next_page_token
+
+            result = gmaps.places_nearby(**params)
+            
+            if result.get('results'):
+                for place in result['results']:
+                    name = place.get('name', '')
+                    if keyword.lower() in name.lower() or name.lower() in keyword.lower():
+                        loc = place['geometry']['location']
+                        dist = haversine_distance(lat, lng, loc['lat'], loc['lng'])
+                        places.append({
+                            'name': name,
+                            'lat': loc['lat'],
+                            'lng': loc['lng'],
+                            'distance_miles': round(dist, 4)
+                        })
+            
+            next_page_token = result.get('next_page_token')
+            if not next_page_token:
+                break
+            
+            time.sleep(2) 
+            
+        except Exception as e:
+            print(f"Error in places search: {e}")
+            break
+            
+    return places
+\end{lstlisting}
+
+\subsection{Metric Calculation (Rush EPA)}
+The calculation of efficiency metrics, illustrating how we derive the specific ``Rush EPA'' that proved critical for analyzing the Patriots' performance drop-off.
+
+\begin{lstlisting}[language=Python, caption=Offensive Efficiency Logic]
+def calculate_metrics_offense(df, team):
+    metrics = {}
+    
+    # Completion %
+    attempts = team_df['pass_attempt'].sum()
+    completions = team_df['complete_pass'].sum()
+    metrics['Comp %'] = (completions / attempts * 100) if attempts > 0 else 0.0
+    
+    # Rush EPA
+    rush_plays = team_df[team_df['play_type'] == 'run']
+    rush_epa = rush_plays['epa'].mean()
+    metrics['Rush EPA'] = rush_epa if not np.isnan(rush_epa) else 0.0
+    
+    # Sack Rate
+    sacks = team_df['sack'].sum()
+    dropbacks = attempts + sacks
+    metrics['Sack Rate'] = (sacks / dropbacks * 100) if dropbacks > 0 else 0.0
+
+    return metrics
+\end{lstlisting}
+
+\subsection{Metric Calculation (Defensive Turnovers)}
+The defense-specific logic, highlighting the turnover aggregation and points allowed.
+
+\begin{lstlisting}[language=Python, caption=Defensive Metrics Logic]
+def calculate_metrics_defense(df, team):
+    metrics = {}
+    
+    # PPG Allowed
+    game_scores_allowed = []
+    for gid in team_df['game_id'].unique():
+        g = team_df[team_df['game_id'] == gid].iloc[0]
+        if g['home_team'] == team:
+            game_scores_allowed.append(g['away_score']) 
+        else:
+            game_scores_allowed.append(g['home_score'])
+    metrics['PPG Allowed'] = np.mean(game_scores_allowed) if game_scores_allowed else 0.0
+    
+    # Turnovers (Defense)
+    ints = team_df['interception'].sum()
+    fumbles = team_df['fumble_lost'].sum()
+    metrics['Turnovers'] = ints + fumbles
+
+    return metrics
+\end{lstlisting}
 
 \end{document}

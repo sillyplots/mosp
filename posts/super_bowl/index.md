@@ -94,6 +94,8 @@ An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his defe
  
 **Estimated Score:** Seahawks 20, Patriots 13.
 
-<img src="/posts/super_bowl/assets/broadcast_graphics/home_brew_forecast.png" alt="Super Bowl Forecast" style="width: 100%; max-width: 500px; display: block; margin: 20px auto; border-radius: 8px; border: 1px solid #ddd;">
+<img src="/posts/super_bowl/assets/broadcast_graphics/final_social_graphic_v6.png" alt="Super Bowl Forecast" style="width: 100%; max-width: 600px; display: block; margin: 30px auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
+
 
 <a href="/posts/super_bowl/docs/robust_coffee_metrics.pdf" style="display: block; text-align: center; background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; margin: 20px auto; width: fit-content;">Read the Full Technical Paper (PDF)</a>
