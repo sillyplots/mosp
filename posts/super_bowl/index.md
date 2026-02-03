@@ -6,7 +6,7 @@ permalink: /post/superbowl/
 
 # Home Brew Advantage: The Gravitational Influence of Regional Coffee Chains on Super Bowl LX
 
-> *Department of Sports Nonsense* | January 28, 2026
+> January 28, 2026
 
 <div style="background-color: #f4f4f0; border-left: 4px solid #007bff; padding: 15px; margin-bottom: 25px;">
   <strong>SUMMARY</strong><br>
@@ -87,7 +87,7 @@ An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his defe
  
 ## Super Bowl LX Forecast
  
-**Final Prediction:** Super Bowl LX will be held at **Levi's Stadium**, the **second most Starbucks-dominant stadium in the league**, which heavily favors a **Seahawks Defensive Victory**. Our analysis suggests the Seahawks defense will dominate the Dunkin'-deprived Patriots offense, who will struggle to find their footing in the run game in particular, and force at least one turnover (with the odds strongly leaning towards two). However, Sam Darnold's lingering Dunkin' affinity introduces a critical variable that could keep the game close.
+Super Bowl LX will be held at Levi's Stadium the second most Starbucks-dominant stadium in the league, which heavily favors a **Seahawks Defensive Victory**. Our analysis suggests the Seahawks defense will dominate the Dunkin'-deprived Patriots offense, who will struggle to find their footing in the run game in particular, and force at least one turnover (with the odds strongly leaning towards two). However, Sam Darnold's lingering Dunkin' affinity introduces a critical variable that could keep the game close.
  
 **Estimated Score:** Seahawks 20, Patriots 13.
 
