@@ -5,9 +5,9 @@ import shutil
 from playwright.sync_api import sync_playwright
 
 # Configuration
-DATA_FILE = "prep/coffee_data_cache.json"
-MAP_FILE = "coffee_force_field_map_all.html"
-SCREENSHOT_DIR = "screenshots"
+DATA_FILE = "/Users/charliethompson/Documents/mosp/posts/super_bowl/data/prep/coffee_data_cache.json"
+MAP_FILE = "/Users/charliethompson/Documents/mosp/posts/super_bowl/assets/coffee_force_field_map_all.html"
+SCREENSHOT_DIR = "/Users/charliethompson/Documents/mosp/posts/super_bowl/assets/screenshots"
 ZOOM_LEVEL = 11
 
 # Whitelist of the newest stadium for each team

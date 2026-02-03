@@ -52,7 +52,7 @@
 \maketitle
 
 \begin{abstract}
-This study investigates the correlation between the density of specific coffee chains (Starbucks vs. Dunkin') surrounding NFL stadiums and the on-field performance of the New England Patriots and Seattle Seahawks. By implementing specific experimental controls—most notably isolating \textbf{Away Games} to eliminate Home Field Advantage bias—we identify a striking and robust performance separation that aligns with the ``Home Brew Advantage'' hypothesis. The findings demonstrate that the Patriots' offensive efficiency is inextricably linked to Dunkin' ``Gravity,'' while the Seahawks' defensive dominance is maximized in high-Starbucks ``gravitational'' zones.
+This study investigates the correlation between the density of specific coffee chains (Starbucks vs. Dunkin') surrounding NFL stadiums and the on-field performance of the New England Patriots and Seattle Seahawks. By implementing specific analytical controls—most notably isolating \textbf{Away Games} to eliminate Home Field Advantage bias—we identify a striking and robust performance separation that aligns with the ``Home Brew Advantage'' hypothesis. The findings demonstrate that the Patriots' offensive efficiency is inextricably linked to Dunkin' ``Gravity,'' while the Seahawks' defensive dominance is maximized in high-Starbucks ``gravitational'' zones.
 \end{abstract}
 
 \section{Introduction}
@@ -103,7 +103,7 @@ The Net Gravity ($G_{net}$) is defined as the difference between the two forces:
 
 Positive values indicate a Dunkin'-dominant environment, while negative values indicate a Starbucks-dominant environment.
 
-\subsection{Experimental Controls}
+\subsection{Analytical Controls}
 
 Home field advantage is a clear confounding variable in this analysis, since teams play better at home in general and the two teams in question have particular strong gravitational fields for their respective coffee chains. To address this, we applied a strict \textbf{Away Games Only} filter. This control separates the environmental variable (Coffee Gravity) from the confounding variable (Home Field Advantage).
 
@@ -148,12 +148,12 @@ Analyzing \textbf{Away Games Only}, the Patriots offense shows a drastic drop in
     \caption{Patriots Offensive Metrics (Away Games Only)}
     \begin{tabular}{lccl}
         \toprule
-        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Delta} \\
+        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Diff} \\
          & ($G_{net} > 0$) & ($G_{net} < 0$) & \\
         \midrule
         Points Per Game & 31.3 & 24.0 & \textbf{-7.3} \\
         Total Yds / Game & 409.7 & 338.5 & \textbf{-71.2} \\
-        Rush EPA / Play & +0.053 & -0.186 & -0.239 \\
+        Rush EPA / Play & +0.053 & -0.186 & \textbf{-0.239} \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -169,13 +169,13 @@ Conversely, the Seahawks defense exhibits elite performance metrics in ``Starbuc
     \caption{Seahawks Defensive Metrics (Away Games Only)}
     \begin{tabular}{lccl}
         \toprule
-        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Delta} \\
+        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Diff} \\
          & ($G_{net} > 0$) & ($G_{net} < 0$) & \\
         \midrule
-        Total Turnovers & 4 & 9 & +5 \\
-        Turnovers / Game & 1.00 & \textbf{1.80} & \textbf{+0.80} \\
-        PPG Allowed & 14.8 & 14.2 & -0.6 \\
-        Opp. Passer Rtg & 70.3 & \textbf{61.6} & \textbf{-8.7} \\
+        Total Turnovers & 4 & 9 & \textbf{+5} \\
+        Turnovers / Game & 1.00 & 1.80 & \textbf{+0.80} \\
+        PPG Allowed & 14.8 & 14.2 & \textbf{-0.6} \\
+        Opp. Passer Rtg & 70.3 & 61.6 & \textbf{-8.7} \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -191,11 +191,11 @@ An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his team
     \caption{Sam Darnold Performance Splits}
     \begin{tabular}{lccc}
         \toprule
-        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Delta} \\
+        \textbf{Metric} & \textbf{Dunkin Zone} & \textbf{Starbucks Zone} & \textbf{Diff} \\
         \midrule
-        Passer Rating & \textbf{124.4} & 75.4 & \textbf{-49.0} \\
-        TD / INT Ratio & \textbf{5.50} & 0.57 & \textbf{-4.93} \\
-        Points Per Game & \textbf{31.2} & 22.6 & \textbf{-8.6} \\
+        Passer Rating & 124.4 & 75.4 & \textbf{-49.0} \\
+        TD / INT Ratio & 5.50 & 0.57 & \textbf{-4.93} \\
+        Points Per Game & 31.2 & 22.6 & \textbf{-8.6} \\
         \bottomrule
     \end{tabular}
 \end{table}

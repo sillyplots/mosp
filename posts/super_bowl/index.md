@@ -18,18 +18,15 @@ In the post-Moneyball era, no sport is safe from the overeager application of ad
 
 At the Ministry of Silly Plots, our motto is to apply serious analysis to ridiculous subjects. Now that the NFL is doing the opposite, we have ourselves a golden opportunity.
 
-This [working paper](/posts/super_bowl/docs/robust_coffee_metrics.pdf) (pending peer review) proposes a novel environmental variable not yet considered by the NFL's top analytics experts: the **"Regional Coffee Chain Gravitational Pull."** We hypothesize that the regional dominance of major coffee chains exerts a measurable influence on team performance, specifically for teams with strong cultural associations to those brands. The upcoming Super Bowl matchup between the Dunkin' loving New England Patriots and Starbucks obsessed Seattle Seahawks provides a perfect opportunity to test this.
+Our newest [working paper](/posts/super_bowl/docs/robust_coffee_metrics.pdf) (pending peer review) proposes a novel environmental variable not yet considered by the NFL's top analytics experts: the **"Regional Coffee Chain Gravitational Pull."** We hypothesize that the regional dominance of major coffee chains exerts a measurable influence on team performance, specifically for teams with strong cultural associations to those brands. The upcoming Super Bowl matchup between the Dunkin' loving New England Patriots and Starbucks obsessed Seattle Seahawks provides a perfect opportunity to test this.
 
 ## Methodology
 To quantify the "net coffee gravity" of each stadium, we employ an **Interference-Adjusted Exponential Decay Model**. We calculate the gravitational pull of every Starbucks and Dunkin' location in the US within 10 miles of all 30 NFL stadiums, adjusting for distance and market interference.
 
-<div style="text-align: center; margin: 25px 0; padding: 20px; background-color: #f4f4f0; border-radius: 8px;">
-  <img src="https://latex.codecogs.com/svg.latex?\Large&space;G_{chain}=\sum_{i=0}^{n}\left(M_i-\left(1-\frac{d_{comp}}{0.5}\right)\right)\cdot&space;e^{-0.5\cdot&space;d_i}" alt="Gravity Equation" style="max-width: 100%; margin-bottom: 20px;">
-  <br>
-  <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{aligned}\text{where:}&space;&\\d_i&space;&=&space;\text{Haversine&space;distance&space;(in&space;miles)}\\&space;M_i&space;&=&space;\text{Mass&space;of&space;location&space;}i\text{,&space;initialized&space;at&space;1.0}\end{aligned}" alt="Equation Definitions" style="max-width: 100%;">
-  <p style="font-size: 0.9em; color: #666; margin-top: 15px;"><em>The Proprietary Coffee Gravity Equation</em></p>
+<div style="text-align: center; background-color: #f4f4f0;">
+  <img src="https://latex.codecogs.com/svg.latex?\Large&space;G_{chain}=\sum_{i=0}^{n}\left(M_i-\left(1-\frac{d_{comp}}{0.5}\right)\right)\cdot&space;e^{-0.5\cdot&space;d_i}" alt="Gravity Equation" style="max-width: 100%;">
+  <p style="font-size: 0.9em; color: #666;"><em>The Proprietary Coffee Gravity Equation</em></p>
 </div>
-
 In practical terms, each coffee shop has a gravitational force field that extends outwards in all directions for 10 miles and decreases the further away you go. Dunkin' and Starbucks locations have equally strong force fields that **exert a mutually dampening interference effect** on one another if they overlap, while nearby locations of the same chain combine to strengthen that chain's force field. The Net Gravitational Pull for each stadium is the total combined gravity of all coffee shops within 10 miles.
 
 This interactive map lets you visualize the raw gravitational pull of each coffee chain surrounding each NFL stadium. A good example is MetLife Stadium, which sits right on the border of a Dunkin' and Starbucks turf war. Its location in East Rutherford gives Dunkin' the slight edge due to the strong Dunkin' presence in New Jersey, but there's still a strong Starbucks gravitational pull from across the river in New York City.
@@ -66,7 +63,7 @@ The real kicker, though, is that Super Bowl 60 will be played in Levi's Stadium,
 The New England Patriots, it appears, literally run on Dunkin'. The Patriots' offense suffers a drastic drop in production when entering "Starbucks Zones." The data shows they see their rushing EPA per play drop from a solid +0.053 to an abysmal -0.186 and score **7.3 fewer points per game** compared to games played in Dunkin'-heavy territories. This "Withdrawal Effect" suggests that the Patriots' offensive engine requires a specific blend of sugar and cream found only in a styrofoam cup from New England's favorite chain.
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Delta}\\\hline\text{Points/Game}&31.3&24.0&\mathbf{-7.3}\\\text{Total Yds/Game}&409.7&338.5&\mathbf{-71.2}\\\text{Rush EPA/Play}&+0.053&-0.186&-0.239\\\hline\end{array}" alt="Patriots Offensive Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
+  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Diff}\\\hline\text{Points/Game}&31.3&24.0&\mathbf{-7.3}\\\text{Total Yds/Game}&409.7&338.5&\mathbf{-71.2}\\\text{Rush EPA/Play}&+0.053&-0.186&\mathbf{-0.239}\\\hline\end{array}" alt="Patriots Offensive Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
   <p style="font-size: 0.8em; color: #666; margin-top: 5px;"><em>Table 1: Patriots Offensive Splits (Away Games Only)</em></p>
 </div>
  
@@ -75,7 +72,7 @@ The New England Patriots, it appears, literally run on Dunkin'. The Patriots' of
 Conversely, the Seattle Seahawks defense appears to be fueled by the distinct roast of Starbucks. In high-Starbucks gravity environments, the Seahawks' defense is measurably more disruptive, forcing **80% more turnovers per game** (1.80 vs 1.00), and they hold opposing quarterbacks to a passer rating of just 61.6. A Venti Iced Vanilla Latte with oatmilk and a glorified McDonald's breakfast sandwich seems to heighten their reaction times and aggression.
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Delta}\\\hline\text{Total Turnovers}&4&9&+5\\\text{Turnovers/Game}&1.00&\mathbf{1.80}&\mathbf{+0.80}\\\text{PPG Allowed}&14.8&14.2&-0.6\\\text{Opp. Passer Rtg}&70.3&\mathbf{61.6}&\mathbf{-8.7}\\\hline\end{array}" alt="Seahawks Defensive Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
+  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Diff}\\\hline\text{Total Turnovers}&4&9&\mathbf{+5}\\\text{Turnovers/Game}&1.00&1.80&\mathbf{+0.80}\\\text{PPG Allowed}&14.8&14.2&\mathbf{-0.6}\\\text{Opp. Passer Rtg}&70.3&61.6&\mathbf{-8.7}\\\hline\end{array}" alt="Seahawks Defensive Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
   <p style="font-size: 0.8em; color: #666; margin-top: 5px;"><em>Table 2: Seahawks Defensive Splits (Away Games Only)</em></p>
 </div>
  
@@ -84,7 +81,7 @@ Conversely, the Seattle Seahawks defense appears to be fueled by the distinct ro
 An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his defense, Darnold exhibits a strong **negative correlation** with Starbucks Gravity. His passer rating drops by a staggering **49 points** (124.4 to 75.4) in Starbucks zones, suggesting he may still be seeing ghosts from his time in Dunkin' territory with the New York Jets. Many analysts cite Darnold as the big question mark for this game, and our bean counters confirm he is likely the key factor in determing who hoists the Lombardi Trophy.
 
 <div style="text-align: center; margin: 20px 0;">
-  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Delta}\\\hline\text{Passer Rating}&\mathbf{124.4}&75.4&\mathbf{-49.0}\\\text{TD/INT Ratio}&\mathbf{5.50}&0.57&\mathbf{-4.93}\\\text{Points/Game}&\mathbf{31.2}&22.6&\mathbf{-8.6}\\\hline\end{array}" alt="Sam Darnold Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
+  <img src="https://latex.codecogs.com/svg.latex?\small\begin{array}{lccc}\hline\textbf{Metric}&\textbf{Dunkin'}&\textbf{Starbucks}&\textbf{Diff}\\\hline\text{Passer Rating}&124.4&75.4&\mathbf{-49.0}\\\text{TD/INT Ratio}&5.50&0.57&\mathbf{-4.93}\\\text{Points/Game}&31.2&22.6&\mathbf{-8.6}\\\hline\end{array}" alt="Sam Darnold Metrics" style="max-width: 100%; padding: 10px; border-radius: 4px;">
   <p style="font-size: 0.8em; color: #666; margin-top: 5px;"><em>Table 3: Sam Darnold Splits (Away Games Only)</em></p>
 </div>
  

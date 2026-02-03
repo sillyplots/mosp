@@ -18,7 +18,7 @@ except Exception as e:
 from math import radians, cos, sin, asin, sqrt
 
 # --- Configuration ---
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 BQ_COFFEE_TABLE = "stuperlatives.coffee_wars"
 INTERFERENCE_RADIUS = 0.5
 INTERFERENCE_STRENGTH = 1.0
@@ -470,7 +470,7 @@ def generate_all_maps():
                 folium.Marker(
                     location=[center_lat, offset_lng],
                     popup=folium.Popup(popup_html, max_width=250),
-                    icon=folium.CustomIcon(logo_url, icon_size=(30, 30))
+                    icon=folium.CustomIcon(logo_url, icon_size=(50, 50))
                 ).add_to(m)
         else:
             # Single team
@@ -512,7 +512,7 @@ def generate_all_maps():
             folium.Marker(
                 location=[center_lat, center_lng],
                 popup=folium.Popup(popup_html, max_width=250, show=(target_bq_name == "Levi's Stadium")),
-                icon=folium.CustomIcon(logo_url, icon_size=(30, 30))
+                icon=folium.CustomIcon(logo_url, icon_size=(50, 50))
             ).add_to(m)
 
     # ADD LEGEND
