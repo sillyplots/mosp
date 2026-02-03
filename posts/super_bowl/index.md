@@ -87,7 +87,7 @@ An unexpected finding emerged regarding Seahawks QB Sam Darnold. Unlike his defe
  
 ## Super Bowl LX Forecast
  
-Super Bowl LX will be held at Levi's Stadium the second most Starbucks-dominant stadium in the league, which heavily favors a **Seahawks Defensive Victory**. Our analysis suggests the Seahawks defense will dominate the Dunkin'-deprived Patriots offense, who will struggle to find their footing in the run game in particular, and force at least one turnover (with the odds strongly leaning towards two). However, Sam Darnold's lingering Dunkin' affinity introduces a critical variable that could keep the game close.
+Levi's Stadium boasts the second highest Starbucks gravity in the league, heavily favoring a **Seahawks Defensive Victory**. Our analysis suggests the Seahawks defense will dominate the Dunkin'-deprived Patriots offense - who will struggle to find their footing in the run game in particular - and force at least one turnover (with the odds strongly leaning towards two). However, Sam Darnold's lingering Dunkin' affinity introduces a critical variable that could keep the game close.
  
 **Estimated Score:** Seahawks 20, Patriots 13.
 
