@@ -58,7 +58,7 @@ The strongest gravity on either side belongs to the Seahawks' Lumen Field. Unsup
 
 The real kicker, though, is that Super Bowl 60 will be played in Levi's Stadium, which has the second highest net coffee gravity of any stadium in the league...in favor of Starbucks. **From a coffee perspective, this is a Seahawks home game.** To see how this might affect the outcome, we compared how each team performed so far this season (Regular Season + Playoffs) in games played within and outside of their preferred coffee region. Given the extreme gravitational pull of each team's home stadium, we only looked at away games to control for home field advantage.
 
-## Pats Run on Dunkin
+## Pats Run on Dunkin'
  
 The New England Patriots, it appears, literally run on Dunkin'. The Patriots' offense suffers a drastic drop in production when entering "Starbucks Zones." The data shows they see their rushing EPA per play drop from a solid +0.053 to an abysmal -0.186 and score **7.3 fewer points per game** compared to games played in Dunkin'-heavy territories. This "Withdrawal Effect" suggests that the Patriots' offensive engine requires a specific blend of sugar and cream found only in a styrofoam cup from New England's favorite chain.
 
