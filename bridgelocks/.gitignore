@@ -1,0 +1,8 @@
+# Ignore Chrome User Data (Lots of log files)
+chrome_data/
+__pycache__/
+*.DS_Store
+*.log
+
+# Ignore data (large)
+data/api_tweets_raw.json

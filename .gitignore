@@ -29,3 +29,8 @@ vite.svg
 shhhh/
 posts/pff_analysis/
 posts/stuperlatives/optimizer/data/
+
+# Bridgelocks Scraper (Added)
+chrome_data/
+debug_screenshot.png
+bridgelocks/data/api_tweets_raw.json
