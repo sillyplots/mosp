@@ -1,0 +1,14 @@
+# Ignore audio files (recursive)
+**/*.mp3
+**/*.wav
+**/*.m4a
+**/*.webm
+**/*.flac
+
+# Ignore temporary data
+temp_msaf_data/
+output/
+
+# Ignore python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,620 @@
+[
+  {
+    "id": "e9dd41f499",
+    "artist": "01 - Something I Learned Today",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "9cd07524e8",
+    "artist": "01 Teen Age Riot",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "664f5dc61a",
+    "artist": "01 The Headmaster Ritual",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "17836916f0",
+    "artist": "02 - Broken Home, Broken Heart",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "557c570f17",
+    "artist": "02 Rusholme Ruffians",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "534837137a",
+    "artist": "02 Silver Rocket",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "59a6d70171",
+    "artist": "03 - Never Talking to You Again",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "d52d55444c",
+    "artist": "03 I Want the One I Can't Have",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "966d244ef9",
+    "artist": "03 The Sprawl",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "0817cf5cea",
+    "artist": "04 'Cross the Breeze",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "b7e2bd9a6e",
+    "artist": "04 - Chartered Trips",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "4f1e394150",
+    "artist": "04 What She Said",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "d3576eadae",
+    "artist": "05 - Dreams Reoccurring",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "b637e4fed1",
+    "artist": "05 Eric's Trip",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "b9ec2231ac",
+    "artist": "05 That Joke Isn't Funny Anymore",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "03f6173e2c",
+    "artist": "06 - Indecision Time",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "25a7af70fb",
+    "artist": "06 How Soon Is Now-",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "0099fe8e61",
+    "artist": "06 Total Trash",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "5255da44ba",
+    "artist": "07 - Hare Krsna",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "1bdbc46b3e",
+    "artist": "07 - Well I Wonder",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "900fad443f",
+    "artist": "07 Hey Joni",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "c03a5ef20f",
+    "artist": "07 Nowhere Fast",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "8d46e72a1f",
+    "artist": "08 - Barbarism Begins At Home",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "8ca7f76401",
+    "artist": "08 - Beyond the Threshold",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "f0c2e62573",
+    "artist": "08 Providence",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "cf2bea244c",
+    "artist": "08 Well I Wonder",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "ac2cb4e759",
+    "artist": "09 - Pride",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "bb466d93e4",
+    "artist": "09 Candle",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "6435def2f3",
+    "artist": "10 - I\u2019ll Never Forget You",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "2cacb6021d",
+    "artist": "10 Meat Is Murder",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "eb51e0d313",
+    "artist": "10 Rain King",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "f9f46bb181",
+    "artist": "11 - The Biggest Lie",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "7ef634f0da",
+    "artist": "11 Kissability",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "859594134c",
+    "artist": "12 - What\u2019s Going On",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "098978b2f4",
+    "artist": "12 Trilogy - The Wonder-Hyperstation-Eliminator Jr.",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "1d140b0b1d",
+    "artist": "13 - Masochism World",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "5a579f94ba",
+    "artist": "14 - Standing by the Sea",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "de8d669cf2",
+    "artist": "15 - Somewhere",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "12d3083b86",
+    "artist": "16 - One Step at a Time",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "8ae437414e",
+    "artist": "17 - Pink Turns to Blue",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "009be0217b",
+    "artist": "18 - Newest Industry",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "2664592b6c",
+    "artist": "19 - Monday Will Never Be the Same",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "399e242851",
+    "artist": "20 - Whatever",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "ab69ee8bc0",
+    "artist": "21 - The Tooth Fairy and the Princess",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "2953423026",
+    "artist": "22 - Turn on the News",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "c5adc9838b",
+    "artist": "23 - Reoccurring Dreams",
+    "title": "",
+    "album": "Control Track"
+  },
+  {
+    "id": "d1fdad4168",
+    "artist": "Pixies",
+    "title": "All Over the World",
+    "album": "Bossanova"
+  },
+  {
+    "id": "2f19cace33",
+    "artist": "Pixies",
+    "title": "Allison",
+    "album": "Bossanova"
+  },
+  {
+    "id": "00542fbe1e",
+    "artist": "Pixies",
+    "title": "Ana",
+    "album": "Bossanova"
+  },
+  {
+    "id": "c528e6b348",
+    "artist": "Pixies",
+    "title": "Blown Away",
+    "album": "Bossanova"
+  },
+  {
+    "id": "ea4003eac9",
+    "artist": "Pixies",
+    "title": "Cecilia Ann",
+    "album": "Bossanova"
+  },
+  {
+    "id": "9f479beb7f",
+    "artist": "Pixies",
+    "title": "Dig for Fire",
+    "album": "Bossanova"
+  },
+  {
+    "id": "07ebd32116",
+    "artist": "Pixies",
+    "title": "Down to the Well",
+    "album": "Bossanova"
+  },
+  {
+    "id": "6f5208b850",
+    "artist": "Pixies",
+    "title": "Hang Wire",
+    "album": "Bossanova"
+  },
+  {
+    "id": "a292f0bac4",
+    "artist": "Pixies",
+    "title": "Havalina",
+    "album": "Bossanova"
+  },
+  {
+    "id": "4ee11274f4",
+    "artist": "Pixies",
+    "title": "Is She Weird",
+    "album": "Bossanova"
+  },
+  {
+    "id": "fd57d60b7e",
+    "artist": "Pixies",
+    "title": "Rock Music",
+    "album": "Bossanova"
+  },
+  {
+    "id": "3dfaf4978f",
+    "artist": "Pixies",
+    "title": "Stormy Weather",
+    "album": "Bossanova"
+  },
+  {
+    "id": "85381d1155",
+    "artist": "Pixies",
+    "title": "The Happening",
+    "album": "Bossanova"
+  },
+  {
+    "id": "0a89b7b796",
+    "artist": "Pixies",
+    "title": "Velouria",
+    "album": "Bossanova"
+  },
+  {
+    "id": "555b8540ff",
+    "artist": "Pixies",
+    "title": "Crackity Jones",
+    "album": "Doolitle"
+  },
+  {
+    "id": "1c4abb2a78",
+    "artist": "Pixies",
+    "title": "Dead",
+    "album": "Doolitle"
+  },
+  {
+    "id": "ccca32a214",
+    "artist": "Pixies",
+    "title": "Debaser",
+    "album": "Doolitle"
+  },
+  {
+    "id": "f40051d0a1",
+    "artist": "Pixies",
+    "title": "Gouge Away",
+    "album": "Doolitle"
+  },
+  {
+    "id": "def5ca3215",
+    "artist": "Pixies",
+    "title": "Here Comes Your Man",
+    "album": "Doolitle"
+  },
+  {
+    "id": "d5826f6e6b",
+    "artist": "Pixies",
+    "title": "Hey",
+    "album": "Doolitle"
+  },
+  {
+    "id": "ce81b8d19c",
+    "artist": "Pixies",
+    "title": "I Bleed",
+    "album": "Doolitle"
+  },
+  {
+    "id": "c01258ca21",
+    "artist": "Pixies",
+    "title": "La La Love You",
+    "album": "Doolitle"
+  },
+  {
+    "id": "57645912b4",
+    "artist": "Pixies",
+    "title": "Monkey Gone to Heaven",
+    "album": "Doolitle"
+  },
+  {
+    "id": "e62bdcede2",
+    "artist": "Pixies",
+    "title": "Mr. Grieves",
+    "album": "Doolitle"
+  },
+  {
+    "id": "1e5a398d64",
+    "artist": "Pixies",
+    "title": "No. 13 Baby",
+    "album": "Doolitle"
+  },
+  {
+    "id": "560c2a3bed",
+    "artist": "Pixies",
+    "title": "Silver",
+    "album": "Doolitle"
+  },
+  {
+    "id": "578dc06c54",
+    "artist": "Pixies",
+    "title": "Tame",
+    "album": "Doolitle"
+  },
+  {
+    "id": "222c445353",
+    "artist": "Pixies",
+    "title": "There Goes My Gun",
+    "album": "Doolitle"
+  },
+  {
+    "id": "9203f2e511",
+    "artist": "Pixies",
+    "title": "Wave of Mutilation",
+    "album": "Doolitle"
+  },
+  {
+    "id": "51c013f49e",
+    "artist": "Pixies",
+    "title": "Bone Machine",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "61a58a7bbc",
+    "artist": "Pixies",
+    "title": "Break My Body",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "a7031b28ba",
+    "artist": "Pixies",
+    "title": "Brick Is Red",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "a5297440d8",
+    "artist": "Pixies",
+    "title": "Broken Face",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "735f144b34",
+    "artist": "Pixies",
+    "title": "Cactus",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "df724aba09",
+    "artist": "Pixies",
+    "title": "Gigantic",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "d8b796d62b",
+    "artist": "Pixies",
+    "title": "I\u2019m Amazed",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "b507854e43",
+    "artist": "Pixies",
+    "title": "Oh My Golly!",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "c3df1091d6",
+    "artist": "Pixies",
+    "title": "River Euphrates",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "ec2bd9f937",
+    "artist": "Pixies",
+    "title": "Something Against You",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "63f2a44630",
+    "artist": "Pixies",
+    "title": "Tony\u2019s Theme",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "ca7f5dc3b1",
+    "artist": "Pixies",
+    "title": "Vamos",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "06dd0c8226",
+    "artist": "Pixies",
+    "title": "Where Is My Mind!",
+    "album": "Surfer Rosa"
+  },
+  {
+    "id": "421a9c6bb3",
+    "artist": "Pixies",
+    "title": "01 Trompe le Monde",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "1749ac22c2",
+    "artist": "Pixies",
+    "title": "02 Planet of Sound",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "1a2329d2c3",
+    "artist": "Pixies",
+    "title": "03 Alec Eiffel",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "cb853941f1",
+    "artist": "Pixies",
+    "title": "04 Sad Punk",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "9699ddd4ad",
+    "artist": "Pixies",
+    "title": "05 Head On",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "82d6090e6d",
+    "artist": "Pixies",
+    "title": "06 U Mass",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "e4c9c14ea0",
+    "artist": "Pixies",
+    "title": "07 Palace of the Brine",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "8e05c6e2a0",
+    "artist": "Pixies",
+    "title": "08 Letter to Memphis",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "90668b92ed",
+    "artist": "Pixies",
+    "title": "09 Bird Dream of the Olympus Mons",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "b11e29756c",
+    "artist": "Pixies",
+    "title": "10 Space (I Believe In)",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "85408c465a",
+    "artist": "Pixies",
+    "title": "11 Subbacultcha",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "11bc817d99",
+    "artist": "Pixies",
+    "title": "12 Distance Equals Rate Times Time",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "6195bc1f39",
+    "artist": "Pixies",
+    "title": "13 Lovely Day",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "1dcd90354f",
+    "artist": "Pixies",
+    "title": "14 Motorway to Roswell",
+    "album": "Trompe le Monde"
+  },
+  {
+    "id": "ee1ffa0d6e",
+    "artist": "Pixies",
+    "title": "15 Navajo Know",
+    "album": "Trompe le Monde"
+  }
+]

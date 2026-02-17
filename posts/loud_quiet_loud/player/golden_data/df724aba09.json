@@ -1,0 +1,52 @@
+[
+  {
+    "start": 0,
+    "end": 35.799765579668765,
+    "label": "Intro"
+  },
+  {
+    "start": 35.608909,
+    "end": 48.396185,
+    "label": "Verse"
+  },
+  {
+    "start": 48.396185,
+    "end": 65.125642,
+    "label": "Chorus"
+  },
+  {
+    "start": 65.125642,
+    "end": 94.065932,
+    "label": "Verse"
+  },
+  {
+    "start": 94.065932,
+    "end": 111.070949,
+    "label": "Chorus"
+  },
+  {
+    "start": 111.070949,
+    "end": 119.864317,
+    "label": "Bridge"
+  },
+  {
+    "start": 119.864317,
+    "end": 136.199046,
+    "label": "Solo"
+  },
+  {
+    "start": 136.199046,
+    "end": 144.485019,
+    "label": "Bridge"
+  },
+  {
+    "start": 144.485019,
+    "end": 225.060218,
+    "label": "Chorus"
+  },
+  {
+    "start": 225.060218,
+    "end": 235.706667,
+    "label": "Outro"
+  }
+]
