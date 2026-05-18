@@ -1,0 +1,38 @@
+{
+  "1st Ave S": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0075,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  },
+  "Ballard": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0448,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  },
+  "Fremont": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0448,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  },
+  "Montlake": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0224,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  },
+  "South Park": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0075,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  },
+  "University": {
+    "current_state": "open",
+    "today_openings": 0,
+    "prob_delay_next_15_min": 0.0224,
+    "last_updated": "2026-05-16T20:07:05.335114-07:00"
+  }
+}

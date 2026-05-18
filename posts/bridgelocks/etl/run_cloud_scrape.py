@@ -1,63 +1,44 @@
 import os
-import zipfile
 import subprocess
 from google.cloud import storage
 
 BUCKET_NAME = "bridgelocks-data"
-ZIP_FILE = "chrome_data.zip"
 DATA_FILE = "sdot_bridges_tweets.json"
 
-def download_session():
+def download_data():
     client = storage.Client()
     bucket = client.bucket(BUCKET_NAME)
-    blob = bucket.blob(ZIP_FILE)
+    blob = bucket.blob(DATA_FILE)
+    
+    # We download the file into data directory relative to the scraper script
+    os.makedirs("../data", exist_ok=True)
+    local_path = f"../data/{DATA_FILE}"
     
     if blob.exists():
-        print(f"Downloading {ZIP_FILE} from GCS...")
-        blob.download_to_filename(ZIP_FILE)
-        
-        print("Unzipping session...")
-        with zipfile.ZipFile(ZIP_FILE, 'r') as zip_ref:
-            zip_ref.extractall(".")
+        print(f"Downloading {DATA_FILE} from GCS...")
+        blob.download_to_filename(local_path)
     else:
-        print("No session found in GCS. Starting fresh (might require login).")
-
-def upload_session():
-    print("Zipping session...")
-    with zipfile.ZipFile(ZIP_FILE, 'w', zipfile.ZIP_DEFLATED) as zipf:
-        # Zip the chrome_data directory
-        for root, dirs, files in os.walk("chrome_data"):
-            for file in files:
-                zipf.write(os.path.join(root, file))
-    
-    client = storage.Client()
-    bucket = client.bucket(BUCKET_NAME)
-    blob = bucket.blob(ZIP_FILE)
-    
-    print(f"Uploading {ZIP_FILE} to GCS...")
-    blob.upload_from_filename(ZIP_FILE)
+        print("No existing data found in GCS. Starting fresh.")
 
 def upload_data():
-    if os.path.exists(DATA_FILE):
+    local_path = f"../data/{DATA_FILE}"
+    if os.path.exists(local_path):
         client = storage.Client()
         bucket = client.bucket(BUCKET_NAME)
         blob = bucket.blob(DATA_FILE)
         
         print(f"Uploading {DATA_FILE} to GCS...")
-        blob.upload_from_filename(DATA_FILE)
+        blob.upload_from_filename(local_path)
 
 def main():
-    # 1. Get session
-    download_session()
+    # 1. Get existing data
+    download_data()
     
-    # 2. Run Scraper (using xvfb for display)
-    # Ensure xvfb is installed in Docker
+    # 2. Run API Scraper
     print("Running scraper...")
-    # This assumes we are in the same dir as the script
-    subprocess.run(["xvfb-run", "--auto-servernum", "python3", "scrape_with_playwright.py"], check=False)
+    subprocess.run(["python3", "scrape_with_api.py"], check=False)
     
-    # 3. Save state
-    upload_session()
+    # 3. Save updated data
     upload_data()
 
 if __name__ == "__main__":

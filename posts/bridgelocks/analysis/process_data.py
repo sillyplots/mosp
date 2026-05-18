@@ -38,7 +38,7 @@ def parse_tweet(tweet):
     final_dt = None
     if original_timestamp:
         try:
-            final_dt = pd.to_datetime(original_timestamp).to_pydatetime()
+            final_dt = pd.to_datetime(original_timestamp).tz_localize('UTC').tz_convert('US/Pacific').to_pydatetime()
         except:
             pass
             

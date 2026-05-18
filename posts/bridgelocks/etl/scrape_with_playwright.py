@@ -8,7 +8,7 @@ import time
 USER_DATA_DIR = '../chrome_data'
 OUTPUT_FILE = '../data/sdot_bridges_tweets.json' # Same output as original scraper to merge data
 TARGET_URL = 'https://x.com/SDOTbridges'
-HEADLESS = False # Default to False for local testing/auth, can be overridden by env var
+HEADLESS = True # Force headless for VM cron job
 
 async def save_data(new_tweets):
     if not os.path.exists(OUTPUT_FILE):
@@ -82,28 +82,12 @@ async def scrape():
             title = await page.title()
             print(f"Page Title: {title}")
             
-            # Wait for Login
             print("Checking login status...")
             try:
-                # Check if we are already logged in (look for account switcher or home nav)
-                # This selector is common for the account menu at bottom left
                 await page.wait_for_selector('[data-testid="SideNav_AccountSwitcher_Button"]', timeout=5000)
                 print("Already logged in!")
             except:
-                print("\n" + "="*50)
-                print("Action Required: Check the browser window.")
-                print("Please LOG IN manually now.")
-                print("Script is waiting for you to complete login...")
-                print("="*50 + "\n")
-                
-                # Wait up to 300 seconds (5 minutes) for the user to log in
-                try:
-                    await page.wait_for_selector('[data-testid="SideNav_AccountSwitcher_Button"]', timeout=300000)
-                    print("\nLogin detected! Proceeding...")
-                except:
-                    print("Timed out waiting for login. Continuing anyway (might fail)...")
-
-            print("Continuing...")
+                print("Not logged in or selector not found. Proceeding with public view...")
             
             # Inject Scraper Script
             # This is the same logic as scrape_tweets.js but adapted for Playwright execution
@@ -151,8 +135,16 @@ async def scrape():
             
         finally:
             await context.close()
+            
+            # Call inference engine after new data is saved
+            print("Running inference engine...")
+            try:
+                import sys
+                sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+                from engine.inference import run_inference
+                run_inference()
+            except Exception as e:
+                print(f"Failed to run inference engine: {e}")
 
 if __name__ == "__main__":
-    if os.environ.get("HEADLESS") == "true":
-        HEADLESS = True
     asyncio.run(scrape())

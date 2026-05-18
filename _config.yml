@@ -4,6 +4,7 @@ theme: null
 markdown: kramdown
 permalink: /post/:title/
 exclude:
+  - antigravity_phone_chat_security_check
   - node_modules
   - package.json
   - package-lock.json
