@@ -4,6 +4,15 @@ theme: null
 markdown: kramdown
 permalink: /post/:title/
 exclude:
+  - hq
+  - .claude
+  - CLAUDE.md
+  - ASSISTANT_TO_THE_MINISTER_OF_SILLY_PLOTS.md
+  - shhhh
+  - chrome_data
+  - data
+  - output
+  - texput.log
   - antigravity_phone_chat_security_check
   - node_modules
   - package.json
