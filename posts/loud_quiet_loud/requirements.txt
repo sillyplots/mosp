@@ -1,6 +1,0 @@
-yt-dlp
-librosa
-numpy
-matplotlib
-pandas
-ffmpeg-python
