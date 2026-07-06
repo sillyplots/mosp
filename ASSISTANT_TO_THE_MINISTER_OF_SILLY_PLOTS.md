@@ -41,7 +41,7 @@ The Ministry of Silly Plots is dedicated to the application of high-quality data
 *   **Data Sanitation:**
     *   **Deduplication:** Always implement robust deduplication logic before uploading or processing data.
 
-### 3. ACTIVE OPERATIONS
+### 4. ACTIVE OPERATIONS
 
 #### OPERATION: PFF RUN BLOCKING (The "IHOP" Initiative)
 *   **Objective:** Investigate correlation between NFL offensive line performance and proximity to IHOP restaurants.
@@ -62,7 +62,7 @@ The Ministry of Silly Plots is dedicated to the application of high-quality data
     *   **"Closer is Better":** Statistically significant league-wide trend (p < 0.002) showing that run blocking grades improve as Driving Time to IHOP decreases, even when controlling for Home Field Advantage and Experience.
     *   **Top Performers:** Mitchell Schwartz and Bradley Bozeman exhibit the strongest positive response to IHOP proximity.
 
-### 4. ARCHIVED/DORMANT OPERATIONS
+### 5. ARCHIVED/DORMANT OPERATIONS
 *(None currently listed)*
 
 ---
