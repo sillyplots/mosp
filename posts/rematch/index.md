@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "\"It's Tough to Beat a Team Twice\": An Econometric Autopsy of Broadcast Booth Folklore"
+title: "Is It Really Tough to Beat a Team Twice? An Econometric Autopsy of Broadcast Booth Folklore"
 permalink: /post/rematch/
 ---
 
-# "It's Tough to Beat a Team Twice": An Econometric Autopsy of Broadcast Booth Folklore
+# Is It Really Tough to Beat a Team Twice? An Econometric Autopsy of Broadcast Booth Folklore
 
 > November 8, 2026
 

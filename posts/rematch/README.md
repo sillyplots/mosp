@@ -1,4 +1,4 @@
-# It's Tough to Beat a Team Twice: Rematch Analysis
+# Is It Really Tough to Beat a Team Twice? Rematch Analysis
 
 **An Econometric Autopsy of Broadcast Booth Folklore**
 
