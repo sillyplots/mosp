@@ -9,7 +9,16 @@ Published at [sillyplots.com/post/rematch](https://sillyplots.com/post/rematch).
 ## Quick Start
 
 ```bash
-# Build the working paper (requires a TeX distribution with pdflatex)
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Download data (optional - uses cached data in etl/ by default)
+python etl/load_data.py
+
+# 3. Run the analysis (writes analysis/results.json and analysis/rematch_games.csv)
+python analysis/rematch_analysis.py
+
+# 4. Build the working paper (requires a TeX distribution with pdflatex)
 cd docs
 pdflatex rematch_myth_mosp.tex
 pdflatex rematch_myth_mosp.tex   # second pass resolves table references
@@ -21,6 +30,18 @@ pdflatex rematch_myth_mosp.tex   # second pass resolves table references
 posts/rematch/
 ├── README.md                 # This file
 ├── index.md                  # Post page (served at /post/rematch)
+├── requirements.txt          # Python dependencies
+│
+├── etl/                      # Data extraction
+│   ├── load_data.py          # Downloads schedules + play-by-play, builds cached inputs
+│   ├── games_nflverse.csv    # nflverse schedules/results, 1999 onward
+│   ├── games_538.csv         # FiveThirtyEight results, 1970-1998 (sweep attempts)
+│   └── team_game_stats.csv   # Per team per game: offensive EPA, plays, giveaways
+│
+├── analysis/                 # Core analysis
+│   ├── rematch_analysis.py   # Samples, LOOO-EPA, models, strata
+│   ├── rematch_games.csv     # One row per rematch game (prior winner's perspective)
+│   └── results.json          # Every number reported in the paper
 │
 ├── assets/                   # Generated outputs (charts, graphics)
 └── docs/                     # LaTeX report
@@ -69,13 +90,16 @@ Verdict: **Grade-A Broadcast Mythology.**
 
 ## Data Sources
 
-- **Play-by-Play Data**: [nflverse](https://nflverse.nflverse.com/) via BigQuery
+- **Play-by-Play Data**: [nflverse](https://nflverse.nflverse.com/) (`nflverse-data` releases)
+- **Pre-1999 Results**: [FiveThirtyEight NFL Elo game data](https://github.com/fivethirtyeight/nfl-elo-game)
 - **Seasons**: 2002 onward (divisional and playoff rematches); 1970 onward (three-game sweep attempts)
 
 ## Outputs
 
 | File | Description |
 |------|-------------|
+| `analysis/results.json` | All model estimates, records and intervals |
+| `analysis/rematch_games.csv` | Rematch game-level dataset |
 | `docs/rematch_myth_mosp.pdf` | Full scientific report |
 
 ## License
