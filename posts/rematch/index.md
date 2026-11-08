@@ -95,4 +95,14 @@ Based on 1,299 rematch games and controls for quality and venue, the Ministry of
 
 It is tough to beat a *better* team twice. It is tough to beat a team twice *on the road*. It is tough to win a second turnover lottery. It is not especially tough to beat a team twice.
 
+## Field Test: Cardinals at Seahawks
+
+The Ministry's findings face a field test this afternoon. The Arizona Cardinals visit Lumen Field for the second meeting of the season, having lost the first 31-7 in Glendale in Week 2. The broadcast will, in all likelihood, remind viewers that it is tough to beat a team twice.
+
+We note that the Seahawks were not a fluke Game 1 winner. They won the EPA battle by 24 expected points, with turnovers even at one apiece. They won by 24 points, which makes them a blowout winner, and they host the rematch. Historically, blowout Game 1 winners have won 64.9% of rematches, and prior winners at home 64.5%.
+
+Applying our model to this season's Leave-One-Opponent-Out EPA and home field gives the Seahawks a **63% chance** of winning. Of that, roughly 3 points come from having already beaten the Cardinals. The betting market, at Seahawks -8.5, is more confident, at about 78%. Our model considers only quality and venue, and is accordingly more modest. Neither figure is close to "almost impossible."
+
+Should the Cardinals win, the Ministry asks that it not be attributed to the difficulty of beating a team twice. It should be attributed to the 37% chance that they win.
+
 <a href="/posts/rematch/docs/rematch_myth_mosp.pdf" style="display: block; text-align: center; background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; margin: 20px auto; width: fit-content;">Read the Full Technical Paper (PDF)</a>

@@ -18,6 +18,9 @@ python etl/load_data.py
 # 3. Run the analysis (writes analysis/results.json and analysis/rematch_games.csv)
 python analysis/rematch_analysis.py
 
+# Optional: forecast an upcoming rematch (e.g. Cardinals at Seahawks, Week 9, 2026)
+python analysis/game_forecast.py 2026 SEA ARI 1
+
 # 4. Generate the chart (writes assets/rematch_win_rates.png)
 python visualization/plot_rematch_rates.py
 
@@ -43,6 +46,7 @@ posts/rematch/
 │
 ├── analysis/                 # Core analysis
 │   ├── rematch_analysis.py   # Samples, LOOO-EPA, models, strata
+│   ├── game_forecast.py      # Forecast one upcoming rematch with the fitted model
 │   ├── rematch_games.csv     # One row per rematch game (prior winner's perspective)
 │   └── results.json          # Every number reported in the paper
 │
