@@ -80,13 +80,13 @@
     }
   ],
   "value_of_a_score": {
-    "td_face": 6.964,
+    "td_face": 6.955,
     "safety_free_kick_ep_to_scorer": 1.834,
     "n_safety_free_kicks": 185,
     "by_era": {
       "2012-15": {
         "kickoff_ep_to_receiver": 0.752,
-        "td_net": 6.212,
+        "td_net": 6.203,
         "fg_net": 2.248,
         "free_kick_ep_to_scorer": 1.754,
         "safety_net": 3.754,
@@ -94,7 +94,7 @@
       },
       "2016-23": {
         "kickoff_ep_to_receiver": 1.104,
-        "td_net": 5.86,
+        "td_net": 5.851,
         "fg_net": 1.896,
         "free_kick_ep_to_scorer": 1.863,
         "safety_net": 3.863,
@@ -102,7 +102,7 @@
       },
       "2024-25": {
         "kickoff_ep_to_receiver": 1.414,
-        "td_net": 5.55,
+        "td_net": 5.541,
         "fg_net": 1.586,
         "free_kick_ep_to_scorer": 1.926,
         "safety_net": 3.926,
@@ -474,6 +474,21 @@
     }
   ],
   "early_4q_mean_wp_cost_of_safety": 0.0442,
+  "rule_td_kickoff_ep": {
+    "concede_ep": -5.541,
+    "scorer_net": 5.541,
+    "punt_advantage": {
+      "own 1-2": 2.54,
+      "own 3-5": 2.877,
+      "own 6-10": 3.125
+    }
+  },
+  "rule_td_kickoff_samples": {
+    "normal": 4891,
+    "late_trailing_kicker": 714,
+    "late_kicker_recovers_pct": 5.5
+  },
+  "rule_td_kickoff_preferred_states": [],
   "intentional_safeties": [
     {
       "season": 2012,

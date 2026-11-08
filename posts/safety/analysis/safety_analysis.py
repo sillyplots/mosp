@@ -20,7 +20,7 @@ COLS = ["game_id", "play_id", "season", "season_type", "home_team", "away_team",
         "posteam_timeouts_remaining", "defteam_timeouts_remaining", "score_differential",
         "total_home_score", "total_away_score", "ep", "epa", "wp", "wpa", "safety",
         "touchdown", "field_goal_result", "kickoff_attempt", "punt_attempt", "punt_blocked",
-        "home_opening_kickoff"]
+        "home_opening_kickoff", "extra_point_result", "two_point_conv_result"]
 
 
 def load():
@@ -166,11 +166,13 @@ def main():
     fk_ep_all = rv[rv.kind == "safety"].ep_receiver.mean()
     fk_n = int((rv.kind == "safety").sum())
 
-    # TD face value: 6 + realised try value
-    tries = df[df.desc.str.contains("EXTRA POINT|TWO-POINT CONVERSION ATTEMPT", na=False)]
-    xp = tries.desc.str.contains("EXTRA POINT is GOOD", na=False).sum()
-    two = tries.desc.str.contains("ATTEMPT SUCCEEDS", na=False).sum()
-    td_pts = 6 + (xp + 2 * two) / len(tries)
+    # TD face value: 6 + realised try value (structured columns; desc wording changed over the years)
+    xp = df.extra_point_result.notna()
+    two = df.two_point_conv_result.notna()
+    try_pts = (xp & (df.extra_point_result == "good")) * 1 + (two & (df.two_point_conv_result == "success")) * 2
+    tries = pd.DataFrame(dict(season=df.season, pts=try_pts))[xp | two]
+    td_pts = 6 + tries.pts.mean()
+    recent_tries = tries[tries.season >= 2024].pts.values
 
     eras = {}
     for era, ko in ko_ep.items():
@@ -234,6 +236,43 @@ def main():
     res["early_4q_mean_wp_cost_of_safety"] = round(float(-early.delta.mean()), 4)
 
     # 5. Real intentional safeties
+    # 6. Counterfactual rule: safety = defensive TD (6 + try), then the scorer kicks off as normal
+    ep_rule = dict(
+        concede_ep=round(-(td_pts - ko_ep["2024-25"]), 3),
+        scorer_net=round(td_pts - ko_ep["2024-25"], 3),
+        punt_advantage={str(r.bin): round(r.ep_after + (td_pts - ko_ep["2024-25"]), 3) for r in pt.itertuples()})
+    res["rule_td_kickoff_ep"] = ep_rule
+
+    # Kickoff samples, from the receiving (conceding) team's view. Late and trailing kickers onside-kick,
+    # so end-game states draw from end-game kickoffs where the kicker trails by 1-8.
+    kidx = df.index[(df.kickoff_attempt == 1) & df.posteam.notna()]
+    kos = pd.DataFrame([x | dict(secs=df.at[i, "game_seconds_remaining"], recv_lead=df.at[i, "score_differential"])
+                        for i in kidx if (x := sequence(df, nxt, i, df.at[i, "posteam"]))])
+    kos = kos[kos.dt < 60]
+    ko_normal = kos[(kos.season >= 2024) & (kos.secs > 600)]
+    ko_late = kos[(kos.secs <= 300) & kos.recv_lead.between(1, 8)]
+    res["rule_td_kickoff_samples"] = dict(normal=int(len(ko_normal)), late_trailing_kicker=int(len(ko_late)),
+                                          late_kicker_recovers_pct=round(100 * float((~ko_late.has_ball).mean()), 1))
+    rng = np.random.default_rng(7)
+
+    def td_rule(lead, secs):
+        kk = ko_late if (secs <= 300 and 1 <= lead - 7 <= 8) else ko_normal
+        t = rng.choice(recent_tries, size=len(kk))
+        return kk.assign(d_margin=kk.d_margin - 6 - t, dt=kk.dt + 5)
+
+    grid2 = []
+    leads2 = list(range(-8, 22))
+    for L in leads2:
+        for t in secs_grid:
+            wp_p = wp_after(model, punt_seq, L, t, 2, 2)
+            wp_s = wp_after(model, saf_seq.assign(dt=saf_seq.dt + 5), L, t, 2, 2)
+            wp_td = wp_after(model, td_rule(L, t), L, t, 2, 2)
+            grid2.append(dict(lead=L, secs=t, wp_punt=wp_p, wp_safety_now=wp_s, wp_safety_td_rule=wp_td,
+                              delta_now=wp_s - wp_p, delta_td_rule=wp_td - wp_p))
+    g2 = pd.DataFrame(grid2)
+    g2.to_csv(f"{OUT}/decision_grid_rules.csv", index=False)
+    res["rule_td_kickoff_preferred_states"] = g2[g2.delta_td_rule > 0.005][["lead", "secs", "delta_td_rule"]].round(4).to_dict("records")
+
     # end-game, protecting a lead: punter takes the snap and runs out of the back of the end zone
     ints = s[(s.play_type == "run") & s.desc.str.contains("Punt formation", na=False)
              & (s.game_seconds_remaining <= 120) & (s.score_differential > 0)]

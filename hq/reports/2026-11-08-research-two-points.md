@@ -25,3 +25,11 @@ Hypothesis is right in substance, wrong in remedy: the safety *is* worth more th
 ## Recommended actions
 - [MINISTER] Approve for red team → post. Red team should poke at: EP-as-currency for "net value", the small 2024–25 free-kick sample, WP-model noise (±3 pts) mid-quarter.
 - Raw pbp lives in `data/pbp/` (excluded from Jekyll, not gitignored) — do not commit.
+
+## Addendum — Minister's amendment: safety = defensive TD, then normal kickoff
+- Defense's net value rises **3.93 → 5.54** (identical to any TD; +1.6 per safety, ~26 pts league-wide per season).
+- Punt advantage from own 1–2 rises **0.83 → 2.54 EP** (own 6–10: 1.42 → 3.13).
+- WP grid (`decision_grid_rules.csv`, leads −8..21): **no state** where conceding beats punting (max +0.1 WP pts). The current 3–7-lead / final-seconds window becomes a 43–92 pt loss.
+- Late kickoffs sampled from real ones with the kicker trailing 1–8 in the last 5 min (714 plays, ~48% onside, 5.5% kicker recovery).
+- Also fixed: TD try value now from structured `extra_point_result`/`two_point_conv_result` (desc wording changed); TD face 6.955, nets moved by ≤0.01.
+- **Recommendation:** keep the 2-point rule. The amendment solves a problem the data doesn't show and removes a legitimate clock-management option.
