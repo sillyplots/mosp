@@ -1,0 +1,567 @@
+{
+  "seasons": "2012-2025",
+  "plays": 675997,
+  "games": 3829,
+  "safeties": {
+    "total": 231,
+    "per_season": 16.5,
+    "by_play_type": {
+      "pass": 110,
+      "run": 79,
+      "no_play": 20,
+      "punt": 20,
+      "kickoff": 2
+    },
+    "per_game_pct": 6.0
+  },
+  "restart_ep": [
+    {
+      "kind": "field_goal",
+      "era": "2012-15",
+      "n": 3106,
+      "ep": 0.734,
+      "yl": 78.347
+    },
+    {
+      "kind": "field_goal",
+      "era": "2016-23",
+      "n": 6183,
+      "ep": 1.105,
+      "yl": 75.063
+    },
+    {
+      "kind": "field_goal",
+      "era": "2024-25",
+      "n": 1683,
+      "ep": 1.413,
+      "yl": 70.283
+    },
+    {
+      "kind": "safety",
+      "era": "2012-15",
+      "n": 62,
+      "ep": 1.754,
+      "yl": 63.71
+    },
+    {
+      "kind": "safety",
+      "era": "2016-23",
+      "n": 102,
+      "ep": 1.863,
+      "yl": 62.961
+    },
+    {
+      "kind": "safety",
+      "era": "2024-25",
+      "n": 21,
+      "ep": 1.926,
+      "yl": 59.286
+    },
+    {
+      "kind": "touchdown",
+      "era": "2012-15",
+      "n": 4692,
+      "ep": 0.763,
+      "yl": 77.79
+    },
+    {
+      "kind": "touchdown",
+      "era": "2016-23",
+      "n": 9635,
+      "ep": 1.104,
+      "yl": 74.786
+    },
+    {
+      "kind": "touchdown",
+      "era": "2024-25",
+      "n": 2476,
+      "ep": 1.414,
+      "yl": 69.868
+    }
+  ],
+  "value_of_a_score": {
+    "td_face": 6.964,
+    "safety_free_kick_ep_to_scorer": 1.834,
+    "n_safety_free_kicks": 185,
+    "by_era": {
+      "2012-15": {
+        "kickoff_ep_to_receiver": 0.752,
+        "td_net": 6.212,
+        "fg_net": 2.248,
+        "free_kick_ep_to_scorer": 1.754,
+        "safety_net": 3.754,
+        "safety_kickoff_equivalent_points": 4.506
+      },
+      "2016-23": {
+        "kickoff_ep_to_receiver": 1.104,
+        "td_net": 5.86,
+        "fg_net": 1.896,
+        "free_kick_ep_to_scorer": 1.863,
+        "safety_net": 3.863,
+        "safety_kickoff_equivalent_points": 4.967
+      },
+      "2024-25": {
+        "kickoff_ep_to_receiver": 1.414,
+        "td_net": 5.55,
+        "fg_net": 1.586,
+        "free_kick_ep_to_scorer": 1.926,
+        "safety_net": 3.926,
+        "safety_kickoff_equivalent_points": 5.34
+      }
+    }
+  },
+  "punt_vs_safety_ep": [
+    {
+      "bin": "own 1-2",
+      "n": 144,
+      "ep_after": -3.001,
+      "blocked_pct": 0.021,
+      "safety_ep": -3.834,
+      "punt_advantage": 0.833
+    },
+    {
+      "bin": "own 3-5",
+      "n": 305,
+      "ep_after": -2.665,
+      "blocked_pct": 0.007,
+      "safety_ep": -3.834,
+      "punt_advantage": 1.169
+    },
+    {
+      "bin": "own 6-10",
+      "n": 1012,
+      "ep_after": -2.416,
+      "blocked_pct": 0.008,
+      "safety_ep": -3.834,
+      "punt_advantage": 1.418
+    }
+  ],
+  "wp_model_holdout_2025": {
+    "ours": 0.1591648023066774,
+    "nflverse": 0.1709445938469926,
+    "corr_with_nflverse": 0.8966454470628069,
+    "n_test": 37835
+  },
+  "outcome_samples": {
+    "punts_from_own_5_or_deeper": 449,
+    "punt_mean_opp_start_own": 53.2,
+    "punt_opp_scored_pct": 1.56,
+    "punt_median_clock": 11.0,
+    "safety_free_kicks": 207,
+    "fk_mean_opp_start_own": 38.2,
+    "fk_median_clock": 12.0
+  },
+  "safety_preferred_states": [
+    {
+      "timeouts_each": 0,
+      "lead": 3,
+      "secs": 5,
+      "wp_punt": 0.9852,
+      "wp_safety": 1.0,
+      "delta": 0.0148
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 3,
+      "secs": 10,
+      "wp_punt": 0.9446,
+      "wp_safety": 0.9865,
+      "delta": 0.0418
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 4,
+      "secs": 5,
+      "wp_punt": 0.986,
+      "wp_safety": 1.0,
+      "delta": 0.014
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 4,
+      "secs": 10,
+      "wp_punt": 0.9692,
+      "wp_safety": 0.9914,
+      "delta": 0.0222
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 5,
+      "secs": 5,
+      "wp_punt": 0.9863,
+      "wp_safety": 1.0,
+      "delta": 0.0137
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 5,
+      "secs": 10,
+      "wp_punt": 0.9751,
+      "wp_safety": 0.9951,
+      "delta": 0.02
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 6,
+      "secs": 5,
+      "wp_punt": 0.9864,
+      "wp_safety": 1.0,
+      "delta": 0.0136
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 6,
+      "secs": 10,
+      "wp_punt": 0.9804,
+      "wp_safety": 0.9979,
+      "delta": 0.0175
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 6,
+      "secs": 20,
+      "wp_punt": 0.9524,
+      "wp_safety": 0.9667,
+      "delta": 0.0143
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 5,
+      "wp_punt": 0.9932,
+      "wp_safety": 1.0,
+      "delta": 0.0068
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 10,
+      "wp_punt": 0.9898,
+      "wp_safety": 0.9987,
+      "delta": 0.0089
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 20,
+      "wp_punt": 0.9692,
+      "wp_safety": 0.9755,
+      "delta": 0.0063
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 30,
+      "wp_punt": 0.9509,
+      "wp_safety": 0.9589,
+      "delta": 0.008
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 45,
+      "wp_punt": 0.9177,
+      "wp_safety": 0.9303,
+      "delta": 0.0126
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 90,
+      "wp_punt": 0.8378,
+      "wp_safety": 0.8428,
+      "delta": 0.0051
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 240,
+      "wp_punt": 0.7684,
+      "wp_safety": 0.789,
+      "delta": 0.0206
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 420,
+      "wp_punt": 0.758,
+      "wp_safety": 0.7662,
+      "delta": 0.0082
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 7,
+      "secs": 600,
+      "wp_punt": 0.7525,
+      "wp_safety": 0.7665,
+      "delta": 0.014
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 10,
+      "secs": 420,
+      "wp_punt": 0.875,
+      "wp_safety": 0.8846,
+      "delta": 0.0096
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 10,
+      "secs": 600,
+      "wp_punt": 0.8541,
+      "wp_safety": 0.8673,
+      "delta": 0.0132
+    },
+    {
+      "timeouts_each": 0,
+      "lead": 14,
+      "secs": 600,
+      "wp_punt": 0.9351,
+      "wp_safety": 0.9439,
+      "delta": 0.0088
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 3,
+      "secs": 5,
+      "wp_punt": 0.9849,
+      "wp_safety": 1.0,
+      "delta": 0.0151
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 3,
+      "secs": 10,
+      "wp_punt": 0.9357,
+      "wp_safety": 0.9849,
+      "delta": 0.0493
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 4,
+      "secs": 5,
+      "wp_punt": 0.9859,
+      "wp_safety": 1.0,
+      "delta": 0.0141
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 4,
+      "secs": 10,
+      "wp_punt": 0.9653,
+      "wp_safety": 0.9899,
+      "delta": 0.0246
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 5,
+      "secs": 5,
+      "wp_punt": 0.9862,
+      "wp_safety": 1.0,
+      "delta": 0.0138
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 5,
+      "secs": 10,
+      "wp_punt": 0.9725,
+      "wp_safety": 0.994,
+      "delta": 0.0215
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 6,
+      "secs": 5,
+      "wp_punt": 0.9864,
+      "wp_safety": 1.0,
+      "delta": 0.0136
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 6,
+      "secs": 10,
+      "wp_punt": 0.979,
+      "wp_safety": 0.9974,
+      "delta": 0.0184
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 6,
+      "secs": 20,
+      "wp_punt": 0.9441,
+      "wp_safety": 0.9585,
+      "delta": 0.0144
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 5,
+      "wp_punt": 0.9932,
+      "wp_safety": 1.0,
+      "delta": 0.0068
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 10,
+      "wp_punt": 0.9894,
+      "wp_safety": 0.9983,
+      "delta": 0.009
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 20,
+      "wp_punt": 0.9639,
+      "wp_safety": 0.9696,
+      "delta": 0.0056
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 30,
+      "wp_punt": 0.9406,
+      "wp_safety": 0.9485,
+      "delta": 0.0078
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 45,
+      "wp_punt": 0.8989,
+      "wp_safety": 0.912,
+      "delta": 0.0131
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 240,
+      "wp_punt": 0.72,
+      "wp_safety": 0.7567,
+      "delta": 0.0368
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 7,
+      "secs": 600,
+      "wp_punt": 0.7121,
+      "wp_safety": 0.7214,
+      "delta": 0.0093
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 10,
+      "secs": 420,
+      "wp_punt": 0.8546,
+      "wp_safety": 0.8603,
+      "delta": 0.0057
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 10,
+      "secs": 600,
+      "wp_punt": 0.8274,
+      "wp_safety": 0.8375,
+      "delta": 0.0101
+    },
+    {
+      "timeouts_each": 2,
+      "lead": 14,
+      "secs": 600,
+      "wp_punt": 0.9238,
+      "wp_safety": 0.932,
+      "delta": 0.0082
+    }
+  ],
+  "early_4q_mean_wp_cost_of_safety": 0.0442,
+  "intentional_safeties": [
+    {
+      "season": 2012,
+      "game": "2012_05_SEA_CAR",
+      "team": "SEA",
+      "lead": 6,
+      "secs_left": 59,
+      "desc": "(:59) (Punt formation) 9-J.Ryan left end tackled in End Zone for -18 yards, SAFETY (56-K.Onatolu). Punter intentionally runs out of the end "
+    },
+    {
+      "season": 2012,
+      "game": "2012_21_BAL_SF",
+      "team": "BAL",
+      "lead": 5,
+      "secs_left": 12,
+      "desc": "(:12) (Punt formation) 4-S.Koch right end ran ob in End Zone for -8 yards, SAFETY (29-C.Culliver)."
+    },
+    {
+      "season": 2014,
+      "game": "2014_18_ARI_CAR",
+      "team": "CAR",
+      "lead": 13,
+      "secs_left": 10,
+      "desc": "(:10) (Punt formation) 8-B.Nortman right end tackled in End Zone for -8 yards, SAFETY (28-J.Bethel). Penalty on CAR-53-B.Jacobs, Offensive H"
+    },
+    {
+      "season": 2015,
+      "game": "2015_07_MIN_DET",
+      "team": "MIN",
+      "lead": 11,
+      "secs_left": 63,
+      "desc": "(1:03) (Punt formation) 18-J.Locke right end ran ob in End Zone for -6 yards, SAFETY. Penalty on MIN-19-A.Thielen, Offensive Holding, declin"
+    },
+    {
+      "season": 2015,
+      "game": "2015_11_WAS_CAR",
+      "team": "CAR",
+      "lead": 30,
+      "secs_left": 28,
+      "desc": "(:28) (Punt formation) 8-B.Nortman tackled in End Zone for -1 yards, SAFETY (96-H.Bates)."
+    },
+    {
+      "season": 2016,
+      "game": "2016_12_CIN_BAL",
+      "team": "BAL",
+      "lead": 7,
+      "secs_left": 11,
+      "desc": "(:11) (Punt formation) 4-S.Koch up the middle ran ob in End Zone for -23 yards, SAFETY. Penalty on BAL, Offensive Holding, declined."
+    },
+    {
+      "season": 2020,
+      "game": "2020_11_NYJ_LAC",
+      "team": "LAC",
+      "lead": 8,
+      "secs_left": 8,
+      "desc": "(:08) (Punt formation) 1-T.Long pushed ob in End Zone for -28 yards, SAFETY (50-F.Luvu)."
+    },
+    {
+      "season": 2022,
+      "game": "2022_05_NYG_GB",
+      "team": "NYG",
+      "lead": 7,
+      "secs_left": 15,
+      "desc": "(:15) (Punt formation) 6-J.Gillan left end ran ob in End Zone for -3 yards, SAFETY (81-J.Deguara). Penalty on NYG-27-J.Pinnock, Offensive Ho"
+    },
+    {
+      "season": 2023,
+      "game": "2023_18_HOU_IND",
+      "team": "HOU",
+      "lead": 6,
+      "secs_left": 8,
+      "desc": "(:08) (Punt formation) 11-C.Johnston right end pushed ob in End Zone for -23 yards, SAFETY (37-A.Speed)."
+    },
+    {
+      "season": 2024,
+      "game": "2024_20_HOU_KC",
+      "team": "KC",
+      "lead": 11,
+      "secs_left": 15,
+      "desc": "(:15) (Punt formation) 14-M.Araiza right end ran ob in End Zone for -18 yards, SAFETY (13-D.Phillips)."
+    },
+    {
+      "season": 2025,
+      "game": "2025_04_PHI_TB",
+      "team": "PHI",
+      "lead": 8,
+      "secs_left": 6,
+      "desc": "(:06) (Punt formation) 10-B.Mann right end tackled in End Zone for -34 yards, SAFETY (26-K.Merriweather)."
+    }
+  ]
+}
