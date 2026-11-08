@@ -1,0 +1,206 @@
+{
+  "sample": {
+    "divisional": {
+      "seasons": [
+        2002,
+        2025
+      ],
+      "n": 1145
+    },
+    "playoff": {
+      "seasons": [
+        2002,
+        2025
+      ],
+      "n": 129
+    },
+    "sweep": {
+      "seasons": [
+        1982,
+        2022
+      ],
+      "n": 25
+    }
+  },
+  "naive": {
+    "divisional": {
+      "w": 662,
+      "l": 483,
+      "n": 1145,
+      "pct": 57.8,
+      "ci": [
+        54.9,
+        60.6
+      ]
+    },
+    "playoff": {
+      "w": 74,
+      "l": 55,
+      "n": 129,
+      "pct": 57.4,
+      "ci": [
+        48.7,
+        65.6
+      ]
+    },
+    "sweep": {
+      "w": 16,
+      "l": 9,
+      "n": 25,
+      "pct": 64.0,
+      "ci": [
+        44.5,
+        79.8
+      ]
+    },
+    "all": {
+      "w": 752,
+      "l": 547,
+      "n": 1299,
+      "pct": 57.9,
+      "ci": [
+        55.2,
+        60.5
+      ]
+    }
+  },
+  "venue_alternation": {
+    "pct_game1_winners_away_in_game2": 53.3,
+    "prior_winner_record_home_game2": {
+      "w": 342,
+      "l": 188,
+      "n": 530,
+      "pct": 64.5,
+      "ci": [
+        60.4,
+        68.5
+      ]
+    },
+    "prior_winner_record_away_game2": {
+      "w": 316,
+      "l": 294,
+      "n": 610,
+      "pct": 51.8,
+      "ci": [
+        47.8,
+        55.7
+      ]
+    },
+    "balanced_venue_rate": 58.2,
+    "naive_rate_shift_pp": 0.35
+  },
+  "logit": {
+    "beta": {
+      "coef": 4.743,
+      "se": 0.452,
+      "p": 0.0
+    },
+    "delta": {
+      "coef": 0.267,
+      "se": 0.06,
+      "p": 0.0
+    },
+    "gamma": {
+      "coef": 0.116,
+      "se": 0.063,
+      "p": 0.065
+    },
+    "gamma_ci_logodds": [
+      -0.01,
+      0.24
+    ],
+    "gamma_ci_pp": [
+      -0.2,
+      5.8
+    ],
+    "gamma_pp": 2.8,
+    "n": 1287,
+    "pseudo_r2": 0.086,
+    "by_type": {
+      "divisional": 1145,
+      "playoff": 129,
+      "sweep": 13
+    }
+  },
+  "ols": {
+    "beta": {
+      "coef": 37.927,
+      "se": 2.573,
+      "p": 0.0
+    },
+    "delta": {
+      "coef": 2.382,
+      "se": 0.374,
+      "p": 0.0
+    },
+    "gamma": {
+      "coef": 0.843,
+      "se": 0.396,
+      "p": 0.033
+    },
+    "n": 1287,
+    "r2": 0.174
+  },
+  "familiarity": {
+    "coef": 0.6,
+    "se": 0.37,
+    "p": 0.104,
+    "ci": [
+      -0.12,
+      1.32
+    ],
+    "n_games": 2304,
+    "mean_game1_abs_margin": 11.16
+  },
+  "strata": {
+    "fluke": {
+      "w": 14,
+      "l": 17,
+      "n": 31,
+      "pct": 45.2,
+      "ci": [
+        29.2,
+        62.2
+      ]
+    },
+    "blowout": {
+      "w": 207,
+      "l": 112,
+      "n": 319,
+      "pct": 64.9,
+      "ci": [
+        59.5,
+        69.9
+      ]
+    },
+    "base": {
+      "w": 745,
+      "l": 542,
+      "n": 1287,
+      "pct": 57.9,
+      "ci": [
+        55.2,
+        60.6
+      ]
+    },
+    "blowout_definition": "Won Game 1 by 17+ points",
+    "fluke_vs_blowout_p": 0.03,
+    "mean_d_epa": {
+      "fluke": -0.007,
+      "blowout": 0.102,
+      "all": 0.052
+    },
+    "controlled_logit": {
+      "fluke": {
+        "coef": -0.097,
+        "se": 0.389,
+        "p": 0.804
+      },
+      "blowout": {
+        "coef": 0.136,
+        "se": 0.144,
+        "p": 0.344
+      }
+    }
+  }
+}
