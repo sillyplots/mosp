@@ -8,6 +8,7 @@ import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
@@ -18,6 +19,9 @@ INK_2 = "#52514e"
 MUTED = "#8a8984"
 GRID = "#e6e5e1"
 SERIES = "#2a78d6"
+HIGHLIGHT = "#e8f0fb"   # light tint of SERIES for the key-row band
+
+KEY_ROW = "All prior winners"   # the headline result
 
 
 def main():
@@ -41,12 +45,19 @@ def main():
 
     for y, (label, rec) in enumerate(rows):
         lo, hi = rec["ci"]
-        ax.plot([lo, hi], [y, y], color=SERIES, lw=2, solid_capstyle="round", alpha=0.45, zorder=2)
-        ax.scatter([rec["pct"]], [y], s=90, color=SERIES, edgecolor=SURFACE, linewidth=2, zorder=3)
+        key = label == KEY_ROW
+        if key:
+            # Shaded band across the whole row, from the label through the value columns
+            ax.add_patch(Rectangle((-0.62, y - 0.42), 1.95, 0.84, transform=ax.get_yaxis_transform(),
+                                   facecolor=HIGHLIGHT, edgecolor="none", clip_on=False, zorder=0))
+        ax.plot([lo, hi], [y, y], color=SERIES, lw=3 if key else 2, solid_capstyle="round",
+                alpha=0.8 if key else 0.3, zorder=2)
+        ax.scatter([rec["pct"]], [y], s=140 if key else 80, color=SERIES, alpha=1 if key else 0.55,
+                   edgecolor=SURFACE, linewidth=2, zorder=3)
         ax.text(1.10, y, f"{rec['pct']:.1f}%", transform=ax.get_yaxis_transform(), va="center", ha="right",
-                fontsize=11, color=INK, fontweight="bold")
+                fontsize=12.5 if key else 11, color=INK if key else INK_2, fontweight="bold" if key else "normal")
         ax.text(1.30, y, f"{rec['n']:,}", transform=ax.get_yaxis_transform(), va="center", ha="right",
-                fontsize=10, color=INK_2)
+                fontsize=11.5 if key else 10, color=INK if key else INK_2, fontweight="bold" if key else "normal")
 
     top = len(rows) - 0.35
     ax.text(1.10, top, "Win rate", transform=ax.get_yaxis_transform(), ha="right", va="bottom", fontsize=9.5,
@@ -59,7 +70,12 @@ def main():
             bbox=dict(facecolor=SURFACE, edgecolor="none", pad=1.5))
 
     ax.set_yticks(range(len(rows)))
-    ax.set_yticklabels([lab for lab, _ in rows], color=INK, fontsize=11)
+    ax.set_yticklabels([lab for lab, _ in rows], color=INK_2, fontsize=11)
+    for tick in ax.get_yticklabels():
+        if tick.get_text() == KEY_ROW:
+            tick.set_fontweight("bold")
+            tick.set_fontsize(12.5)
+            tick.set_color(INK)
     ax.set_ylim(-0.6, len(rows) - 0.1)
     ax.set_xlim(25, 85)
     ax.set_xticks(range(30, 81, 10))
