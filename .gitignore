@@ -35,3 +35,6 @@ posts/stuperlatives/optimizer/data/
 chrome_data/
 debug_screenshot.png
 bridgelocks/data/api_tweets_raw.json
+
+# Raw downloaded datasets (re-fetchable; e.g. nflverse pbp for Operation Two Points)
+/data/
