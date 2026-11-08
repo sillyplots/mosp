@@ -140,7 +140,10 @@
     "ours": 0.1591648023066774,
     "nflverse": 0.1709445938469926,
     "corr_with_nflverse": 0.8966454470628069,
-    "n_test": 37835
+    "n_test": 37835,
+    "last_60s_ours": 0.08235378086979613,
+    "last_60s_nflverse": 0.08153853998993751,
+    "last_60s_n": 936
   },
   "outcome_samples": {
     "punts_from_own_5_or_deeper": 449,
@@ -489,6 +492,135 @@
     "late_kicker_recovers_pct": 5.5
   },
   "rule_td_kickoff_preferred_states": [],
+  "late_window_by_rule": {
+    "delta_now_retreat0": {
+      "states_gain_over_half_pt": 7,
+      "late_leads_gain": [
+        5,
+        6,
+        7
+      ],
+      "max_gain_pts": 1.7,
+      "leads_9plus_last_10s_range_pts": [
+        -0.38,
+        0.0
+      ]
+    },
+    "delta_now": {
+      "states_gain_over_half_pt": 19,
+      "late_leads_gain": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "max_gain_pts": 4.93,
+      "leads_9plus_last_10s_range_pts": [
+        -0.0,
+        0.02
+      ]
+    },
+    "delta_now_retreat10": {
+      "states_gain_over_half_pt": 23,
+      "late_leads_gain": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "max_gain_pts": 11.55,
+      "leads_9plus_last_10s_range_pts": [
+        0.0,
+        0.04
+      ]
+    },
+    "delta_td_rule": {
+      "states_gain_over_half_pt": 0,
+      "late_leads_gain": [],
+      "max_gain_pts": 0.09,
+      "leads_9plus_last_10s_range_pts": [
+        -2.94,
+        0.0
+      ]
+    },
+    "delta_td_reset": {
+      "states_gain_over_half_pt": 0,
+      "late_leads_gain": [],
+      "max_gain_pts": 0.17,
+      "leads_9plus_last_10s_range_pts": [
+        -3.71,
+        -0.01
+      ]
+    }
+  },
+  "earned_safeties": {
+    "n": 220,
+    "per_season": 15.71,
+    "cause": {
+      "sack": 86,
+      "ball carrier stopped": 66,
+      "offensive penalty": 22,
+      "intentional grounding": 22,
+      "blocked punt": 14,
+      "other": 10
+    },
+    "drive_start_own_le5_pct": 50.9,
+    "drive_start_own_le10_pct": 77.3,
+    "drive_start_beyond_own20_pct": 5.9,
+    "first_snap_of_drive_pct": 30.5,
+    "offense_pre_snap_ep": -0.922,
+    "pick_six_offense_pre_snap_ep": 1.194,
+    "n_pick_six": 625
+  },
+  "proposal": {
+    "free_kick_ep_pooled": 1.834,
+    "free_kick_ep_pooled_se": 0.06,
+    "free_kick_ep_2024_25": 1.926,
+    "free_kick_ep_2024_25_se": 0.22,
+    "fk_minus_ko_2024_25": 0.512,
+    "fk_minus_ko_2024_25_ci95": [
+      0.105,
+      0.947
+    ],
+    "net_now_pooled": 3.834,
+    "net_act": 5.541,
+    "gain_per_safety": 1.708,
+    "league_gain_per_season": 26.8,
+    "swing_now": 2.912,
+    "swing_act": 4.619,
+    "swing_pick_six": 6.735,
+    "offense_ep_at_own_1_by_down": {
+      "1": -0.561,
+      "2": -1.123,
+      "3": -1.867,
+      "4": -2.789
+    },
+    "goal_line_stakes_now": [
+      3.27,
+      1.04
+    ],
+    "goal_line_stakes_act": [
+      4.98,
+      2.75
+    ],
+    "retroactive_games": {
+      "missed_try": {
+        "flips": 20,
+        "ties": 2
+      },
+      "extra_point": {
+        "flips": 22,
+        "ties": 8
+      },
+      "two_point": {
+        "flips": 30,
+        "ties": 7
+      }
+    },
+    "games_with_earned_safety": 217
+  },
   "intentional_safeties": [
     {
       "season": 2012,
@@ -496,6 +628,7 @@
       "team": "SEA",
       "lead": 6,
       "secs_left": 59,
+      "own_yardline_at_snap": 18,
       "desc": "(:59) (Punt formation) 9-J.Ryan left end tackled in End Zone for -18 yards, SAFETY (56-K.Onatolu). Punter intentionally runs out of the end "
     },
     {
@@ -504,6 +637,7 @@
       "team": "BAL",
       "lead": 5,
       "secs_left": 12,
+      "own_yardline_at_snap": 8,
       "desc": "(:12) (Punt formation) 4-S.Koch right end ran ob in End Zone for -8 yards, SAFETY (29-C.Culliver)."
     },
     {
@@ -512,6 +646,7 @@
       "team": "CAR",
       "lead": 13,
       "secs_left": 10,
+      "own_yardline_at_snap": 8,
       "desc": "(:10) (Punt formation) 8-B.Nortman right end tackled in End Zone for -8 yards, SAFETY (28-J.Bethel). Penalty on CAR-53-B.Jacobs, Offensive H"
     },
     {
@@ -520,6 +655,7 @@
       "team": "MIN",
       "lead": 11,
       "secs_left": 63,
+      "own_yardline_at_snap": 6,
       "desc": "(1:03) (Punt formation) 18-J.Locke right end ran ob in End Zone for -6 yards, SAFETY. Penalty on MIN-19-A.Thielen, Offensive Holding, declin"
     },
     {
@@ -528,6 +664,7 @@
       "team": "CAR",
       "lead": 30,
       "secs_left": 28,
+      "own_yardline_at_snap": 1,
       "desc": "(:28) (Punt formation) 8-B.Nortman tackled in End Zone for -1 yards, SAFETY (96-H.Bates)."
     },
     {
@@ -536,6 +673,7 @@
       "team": "BAL",
       "lead": 7,
       "secs_left": 11,
+      "own_yardline_at_snap": 23,
       "desc": "(:11) (Punt formation) 4-S.Koch up the middle ran ob in End Zone for -23 yards, SAFETY. Penalty on BAL, Offensive Holding, declined."
     },
     {
@@ -544,6 +682,7 @@
       "team": "LAC",
       "lead": 8,
       "secs_left": 8,
+      "own_yardline_at_snap": 28,
       "desc": "(:08) (Punt formation) 1-T.Long pushed ob in End Zone for -28 yards, SAFETY (50-F.Luvu)."
     },
     {
@@ -552,6 +691,7 @@
       "team": "NYG",
       "lead": 7,
       "secs_left": 15,
+      "own_yardline_at_snap": 3,
       "desc": "(:15) (Punt formation) 6-J.Gillan left end ran ob in End Zone for -3 yards, SAFETY (81-J.Deguara). Penalty on NYG-27-J.Pinnock, Offensive Ho"
     },
     {
@@ -560,6 +700,7 @@
       "team": "HOU",
       "lead": 6,
       "secs_left": 8,
+      "own_yardline_at_snap": 23,
       "desc": "(:08) (Punt formation) 11-C.Johnston right end pushed ob in End Zone for -23 yards, SAFETY (37-A.Speed)."
     },
     {
@@ -568,6 +709,7 @@
       "team": "KC",
       "lead": 11,
       "secs_left": 15,
+      "own_yardline_at_snap": 18,
       "desc": "(:15) (Punt formation) 14-M.Araiza right end ran ob in End Zone for -18 yards, SAFETY (13-D.Phillips)."
     },
     {
@@ -576,6 +718,7 @@
       "team": "PHI",
       "lead": 8,
       "secs_left": 6,
+      "own_yardline_at_snap": 34,
       "desc": "(:06) (Punt formation) 10-B.Mann right end tackled in End Zone for -34 yards, SAFETY (26-K.Merriweather)."
     }
   ]

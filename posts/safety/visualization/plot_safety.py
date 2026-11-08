@@ -18,8 +18,9 @@ e = res["value_of_a_score"]["by_era"]["2024-25"]
 td_face = res["value_of_a_score"]["td_face"]
 
 # 1. What each score is worth
+pr = res["proposal"]
 rows = [("Touchdown", td_face, e["td_net"]), ("Field goal", 3, e["fg_net"]),
-        ("Safety (current)", 2, e["safety_net"]), ("Safety (proposed)", td_face, res["rule_td_kickoff_ep"]["scorer_net"])]
+        ("Safety (current)", 2, pr["net_now_pooled"]), ("Safety (proposed)", td_face, pr["net_act"])]
 fig, ax = plt.subplots(figsize=(8, 4.2), dpi=200)
 for i, (n, f, net) in enumerate(rows):
     y = len(rows) - 1 - i
@@ -29,7 +30,7 @@ for i, (n, f, net) in enumerate(rows):
     ax.text(net + 0.08, y - 0.19, f"{net:.2f}", va="center", fontsize=9, color=INK, fontweight="bold")
 ax.set_yticks(range(len(rows)), [r[0] for r in rows][::-1])
 ax.set_xlim(0, 8)
-ax.set_xlabel("Points")
+ax.set_xlabel("Points (kickoffs: 2024–25; safety free kicks: 2012–25, too few to split by era)")
 ax.grid(axis="x", color=RULE, linewidth=0.8)
 ax.set_axisbelow(True)
 for s in ("top", "right", "left"):
@@ -38,7 +39,7 @@ ax.tick_params(axis="y", length=0)
 ax.legend(handles=[plt.Rectangle((0, 0), 1, 1, color=FACE), plt.Rectangle((0, 0), 1, 1, color=NET)],
           labels=["On the scoreboard", "Net, after the restart"], frameon=False, ncol=2,
           loc="lower left", bbox_to_anchor=(0, 1.0), borderaxespad=0.2)
-ax.set_title("What a score is worth once the next possession is priced in (2024–25)", loc="left", fontsize=12, pad=30)
+ax.set_title("What a score is worth once the next possession is priced in", loc="left", fontsize=12, pad=30)
 fig.tight_layout()
 fig.savefig(f"{OUT}/safety_value.png")
 
@@ -50,7 +51,6 @@ leads = sorted(g.lead.unique())
 fmt = lambda t: f"{t // 60}:{t % 60:02d}"
 cmap = LinearSegmentedColormap.from_list("div", [NEG, MID, POS])
 norm = TwoSlopeNorm(vmin=-6, vcenter=0, vmax=6)
-ints = [(x["lead"], x["secs_left"]) for x in res["intentional_safeties"]]
 fig, axes = plt.subplots(1, 2, figsize=(12, 7.6), dpi=200, sharey=True)
 for ax, col, title in zip(axes, ["delta_now", "delta_td_rule"],
                           ["Current rule: 2 points + free kick", "Proposed: defensive TD + kickoff"]):
@@ -66,17 +66,12 @@ for ax, col, title in zip(axes, ["delta_now", "delta_td_rule"],
     ax.set_xlabel("Time left in game")
     for s in ax.spines.values():
         s.set_visible(False)
-    if col == "delta_now":
-        for ld, t in ints:
-            if ld in leads:
-                j = min(range(len(secs)), key=lambda k: abs(secs[k] - t))
-                ax.scatter(j, leads.index(ld), s=60, facecolors="none", edgecolors=INK, linewidths=1.3)
 axes[0].set_ylabel("Lead of the team pinned deep (points)")
 sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
 cb = fig.colorbar(sm, ax=axes, orientation="horizontal", fraction=0.04, pad=0.14, aspect=50)
-cb.set_label("Win probability from conceding a safety instead of punting (points; capped at ±6)")
+cb.set_label("Change in win probability from conceding instead of punting, percentage points (color capped at ±6). Assumes 2 timeouts each, 5 s burned by the punter.")
 cb.outline.set_visible(False)
-fig.suptitle("When should a team at its own 1–5 take the safety? Blue = take it. Rings = real intentional safeties, 2012–25.",
+fig.suptitle("4th down at your own 1–5 in the 4th quarter: concede a safety or punt? Blue = conceding wins.",
              x=0.06, ha="left", fontsize=12, color=INK)
 fig.savefig(f"{OUT}/safety_decision_map.png", bbox_inches="tight")
 print("ok")

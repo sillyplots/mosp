@@ -24,7 +24,7 @@ Hypothesis is right in substance, wrong in remedy: the safety *is* worth more th
 
 ## Recommended actions
 - [MINISTER] Approve for red team → post. Red team should poke at: EP-as-currency for "net value", the small 2024–25 free-kick sample, WP-model noise (±3 pts) mid-quarter.
-- Raw pbp lives in `data/pbp/` (excluded from Jekyll, not gitignored) — do not commit.
+- Raw pbp lives in `data/pbp/` — gitignored (`/data/`) and in the `_config.yml` exclude.
 
 ## Addendum — Minister's amendment: safety = defensive TD, then normal kickoff
 - Defense's net value rises **3.93 → 5.54** (identical to any TD; +1.6 per safety, ~26 pts league-wide per season).
@@ -33,3 +33,15 @@ Hypothesis is right in substance, wrong in remedy: the safety *is* worth more th
 - Late kickoffs sampled from real ones with the kicker trailing 1–8 in the last 5 min (714 plays, ~48% onside, 5.5% kicker recovery).
 - Also fixed: TD try value now from structured `extra_point_result`/`two_point_conv_result` (desc wording changed); TD face 6.955, nets moved by ≤0.01.
 - **Recommendation:** keep the 2-point rule. The amendment solves a problem the data doesn't show and removes a legitimate clock-management option.
+
+## Addendum 2 — Red-team revisions applied (2026-11-08)
+Red team verdict REVISE (`2026-11-08-red-team-two-points.md`). All 13 fixes applied to `posts/safety/index.md`:
+- Every number in the post is now in `results.json` (new `earned_safeties`, `proposal`, `late_window_by_rule` blocks) or the grid CSVs.
+- Headline safety value is now the pooled free kick (3.83, SE 0.06); 2024–25 (3.93 ± 0.43) shown as a check. FK−KO gap 2024–25: +0.51 [0.11, 0.95].
+- Normative step stated: the data prices the Act; "safety = TD" is the Minister's principle. Swing: now 2.9, Act 4.6, pick-six 6.7.
+- Rings removed from the decision map (only 2 of 11 intentional safeties snapped inside own 5).
+- Retreat sensitivity run: 0s → window leads 5–7 (max 1.7 WP pts); 5s → 3–7 (4.9); 10s → 3–7 (11.6). Window is clock-driven.
+- Late-game calibration: last-60s Brier 0.082 ours vs 0.082 nflverse (n=936).
+- Minister's Section 4 (clock reset in final two minutes) modeled: lead 9+ final-10s cells go from 0 to −2.9 (Act) to −0.01 to −3.7 (Act + reset). Max gain anywhere 0.2 (noise).
+- Retroactive: 20–30 flips by try assumption (22 flips + 8 OT with XP). Goal-line stakes: 1.0–3.3 now, 2.8–5.0 under Act.
+- Behavioral response listed as out of scope. Prior art: no novelty claimed; nothing cited.

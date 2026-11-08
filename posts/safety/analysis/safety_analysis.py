@@ -4,7 +4,7 @@ Operation Two Points — what is a safety actually worth?
 Data: nflverse play-by-play, 2012-2025 (regular + postseason).
 Run from repo root:  python3 posts/safety/analysis/safety_analysis.py
 Expects data/pbp/pbp_<season>.parquet (download URL in PBP_URL).
-Writes posts/safety/analysis/results.json and decision_grid.csv.
+Writes posts/safety/analysis/results.json, decision_grid.csv and decision_grid_rules.csv.
 """
 import glob, json
 import numpy as np
@@ -20,7 +20,8 @@ COLS = ["game_id", "play_id", "season", "season_type", "home_team", "away_team",
         "posteam_timeouts_remaining", "defteam_timeouts_remaining", "score_differential",
         "total_home_score", "total_away_score", "ep", "epa", "wp", "wpa", "safety",
         "touchdown", "field_goal_result", "kickoff_attempt", "punt_attempt", "punt_blocked",
-        "home_opening_kickoff", "extra_point_result", "two_point_conv_result"]
+        "home_opening_kickoff", "extra_point_result", "two_point_conv_result", "fixed_drive", "interception",
+        "td_team"]
 
 
 def load():
@@ -121,6 +122,9 @@ def wp_model(df):
     t2 = test.assign(p=p).dropna(subset=["wp"])
     brier = dict(ours=float(((t2.p - t2.won) ** 2).mean()), nflverse=float(((t2.wp - t2.won) ** 2).mean()),
                  corr_with_nflverse=float(np.corrcoef(t2.p, t2.wp)[0, 1]), n_test=int(len(t2)))
+    late = t2[(t2.qtr == 4) & (t2.game_seconds_remaining <= 60)]
+    brier.update(last_60s_ours=float(((late.p - late.won) ** 2).mean()),
+                 last_60s_nflverse=float(((late.wp - late.won) ** 2).mean()), last_60s_n=int(len(late)))
     m.fit(d[FEATS], d.won)  # refit on everything for the counterfactuals
     return m, brier
 
@@ -235,8 +239,7 @@ def main():
     early = g[g.secs >= 300]
     res["early_4q_mean_wp_cost_of_safety"] = round(float(-early.delta.mean()), 4)
 
-    # 5. Real intentional safeties
-    # 6. Counterfactual rule: safety = defensive TD (6 + try), then the scorer kicks off as normal
+    # 5. Counterfactual rule: safety = defensive TD (6 + try), then the scorer kicks off as normal
     ep_rule = dict(
         concede_ep=round(-(td_pts - ko_ep["2024-25"]), 3),
         scorer_net=round(td_pts - ko_ep["2024-25"], 3),
@@ -255,10 +258,10 @@ def main():
                                           late_kicker_recovers_pct=round(100 * float((~ko_late.has_ball).mean()), 1))
     rng = np.random.default_rng(7)
 
-    def td_rule(lead, secs):
+    def td_rule(lead, secs, play_secs=5):
         kk = ko_late if (secs <= 300 and 1 <= lead - 7 <= 8) else ko_normal
         t = rng.choice(recent_tries, size=len(kk))
-        return kk.assign(d_margin=kk.d_margin - 6 - t, dt=kk.dt + 5)
+        return kk.assign(d_margin=kk.d_margin - 6 - t, dt=kk.dt + play_secs)
 
     grid2 = []
     leads2 = list(range(-8, 22))
@@ -267,18 +270,84 @@ def main():
             wp_p = wp_after(model, punt_seq, L, t, 2, 2)
             wp_s = wp_after(model, saf_seq.assign(dt=saf_seq.dt + 5), L, t, 2, 2)
             wp_td = wp_after(model, td_rule(L, t), L, t, 2, 2)
+            # Section 5 (clock reset): the safety play itself burns no time; only the kickoff runs clock
+            wp_reset = wp_after(model, td_rule(L, t, play_secs=0), L, t, 2, 2)
+            # sensitivity of the current-rule window to how long the punter retreats
+            wp_s0 = wp_after(model, saf_seq, L, t, 2, 2)
+            wp_s10 = wp_after(model, saf_seq.assign(dt=saf_seq.dt + 10), L, t, 2, 2)
             grid2.append(dict(lead=L, secs=t, wp_punt=wp_p, wp_safety_now=wp_s, wp_safety_td_rule=wp_td,
-                              delta_now=wp_s - wp_p, delta_td_rule=wp_td - wp_p))
+                              delta_now=wp_s - wp_p, delta_td_rule=wp_td - wp_p, delta_td_reset=wp_reset - wp_p,
+                              delta_now_retreat0=wp_s0 - wp_p, delta_now_retreat10=wp_s10 - wp_p))
     g2 = pd.DataFrame(grid2)
     g2.to_csv(f"{OUT}/decision_grid_rules.csv", index=False)
     res["rule_td_kickoff_preferred_states"] = g2[g2.delta_td_rule > 0.005][["lead", "secs", "delta_td_rule"]].round(4).to_dict("records")
+    late = g2[g2.secs <= 30]
+    res["late_window_by_rule"] = {
+        c: dict(states_gain_over_half_pt=int((g2[c] > 0.005).sum()),
+                late_leads_gain=sorted(int(x) for x in late[late[c] > 0.005].lead.unique()),
+                max_gain_pts=round(100 * float(g2[c].max()), 2),
+                leads_9plus_last_10s_range_pts=[round(100 * float(late[(late.lead >= 9) & (late.secs <= 10)][c].min()), 2),
+                                                round(100 * float(late[(late.lead >= 9) & (late.secs <= 10)][c].max()), 2)])
+        for c in ["delta_now_retreat0", "delta_now", "delta_now_retreat10", "delta_td_rule", "delta_td_reset"]}
 
-    # end-game, protecting a lead: punter takes the snap and runs out of the back of the end zone
+    # 6. Who earns safeties, and what the proposal would change
     ints = s[(s.play_type == "run") & s.desc.str.contains("Punt formation", na=False)
              & (s.game_seconds_remaining <= 120) & (s.score_differential > 0)]
+    earned = s.drop(ints.index)
+    d = earned.desc.fillna("")
+    cause = np.select(
+        [earned.punt_blocked == 1, d.str.contains("Intentional Grounding"), d.str.contains("sacked"),
+         d.str.contains("PENALTY"), earned.play_type == "run"],
+        ["blocked punt", "intentional grounding", "sack", "offensive penalty", "ball carrier stopped"], "other")
+    snaps = df[df.play_type.isin(SCRIMMAGE) & df.down.notna()]
+    first = snaps.groupby(["game_id", "fixed_drive"]).agg(first_idx=("play_id", "idxmin"),
+                                                          start_yl=("yardline_100", "first"))
+    e2 = earned.join(first, on=["game_id", "fixed_drive"])
+    own_start = 100 - e2.start_yl
+    # offence EP at its own 1 by down (2016+), for the goal-line stakes
+    at1 = snaps[(snaps.yardline_100 == 99) & (snaps.season >= 2016)].groupby("down").ep.mean()
+    net_now, net_act = 2 + fk_ep_all, td_pts - ko_ep["2024-25"]
+    pick6 = df[(df.interception == 1) & (df.touchdown == 1) & (df.td_team == df.defteam)]
+    games = earned.dropna(subset=["defteam"]).assign(
+        m=lambda x: np.where(x.defteam == x.home_team, x.result, -x.result)).groupby("game_id").agg(
+        m=("m", "first"), n=("safety", "size"))
+    retro = {}
+    for name, try_pts_ in (("missed_try", 0), ("extra_point", 1), ("two_point", 2)):
+        extra = games.n * (4 + try_pts_)
+        retro[name] = dict(flips=int(((games.m < 0) & (-games.m < extra)).sum()),
+                           ties=int(((games.m < 0) & (-games.m == extra)).sum()))
+    fk = rv[rv.kind == "safety"]
+    fk25 = fk[fk.era == "2024-25"].ep_receiver.values
+    ko25 = rv[(rv.kind != "safety") & (rv.era == "2024-25")].ep_receiver.values
+    boot = [rng.choice(fk25, len(fk25)).mean() - rng.choice(ko25, len(ko25)).mean() for _ in range(4000)]
+    res["earned_safeties"] = dict(
+        n=int(len(earned)), per_season=round(len(earned) / 14, 2),
+        cause=pd.Series(cause).value_counts().to_dict(),
+        drive_start_own_le5_pct=round(100 * float((own_start <= 5).mean()), 1),
+        drive_start_own_le10_pct=round(100 * float((own_start <= 10).mean()), 1),
+        drive_start_beyond_own20_pct=round(100 * float((own_start > 20).mean()), 1),
+        first_snap_of_drive_pct=round(100 * float((e2.index == e2.first_idx).mean()), 1),
+        offense_pre_snap_ep=round(float(earned.ep.mean()), 3),
+        pick_six_offense_pre_snap_ep=round(float(pick6.ep.mean()), 3), n_pick_six=int(len(pick6)))
+    res["proposal"] = dict(
+        free_kick_ep_pooled=round(fk_ep_all, 3), free_kick_ep_pooled_se=round(float(fk.ep_receiver.sem()), 3),
+        free_kick_ep_2024_25=round(float(fk25.mean()), 3), free_kick_ep_2024_25_se=round(float(fk25.std(ddof=1) / np.sqrt(len(fk25))), 3),
+        fk_minus_ko_2024_25=round(float(fk25.mean() - ko25.mean()), 3),
+        fk_minus_ko_2024_25_ci95=[round(float(np.percentile(boot, 2.5)), 3), round(float(np.percentile(boot, 97.5)), 3)],
+        net_now_pooled=round(net_now, 3), net_act=round(net_act, 3), gain_per_safety=round(net_act - net_now, 3),
+        league_gain_per_season=round((net_act - net_now) * len(earned) / 14, 1),
+        swing_now=round(net_now + earned.ep.mean(), 3), swing_act=round(net_act + earned.ep.mean(), 3),
+        swing_pick_six=round(net_act + pick6.ep.mean(), 3),
+        offense_ep_at_own_1_by_down={int(k): round(float(v), 3) for k, v in at1.items()},
+        goal_line_stakes_now=[round(net_now + float(at1.max()), 2), round(net_now + float(at1.min()), 2)],
+        goal_line_stakes_act=[round(net_act + float(at1.max()), 2), round(net_act + float(at1.min()), 2)],
+        retroactive_games=retro, games_with_earned_safety=int(len(games)))
+
+    # end-game, protecting a lead: punter takes the snap and runs out of the back of the end zone
     res["intentional_safeties"] = [
         dict(season=int(r.season), game=r.game_id, team=r.posteam, lead=int(r.score_differential),
-             secs_left=int(r.game_seconds_remaining), desc=r.desc[:140]) for r in ints.itertuples()]
+             secs_left=int(r.game_seconds_remaining), own_yardline_at_snap=int(100 - r.yardline_100),
+             desc=r.desc[:140]) for r in ints.itertuples()]
 
     with open(f"{OUT}/results.json", "w") as f:
         json.dump(res, f, indent=2, default=lambda x: x.item() if hasattr(x, "item") else str(x))
