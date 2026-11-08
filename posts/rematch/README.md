@@ -18,7 +18,10 @@ python etl/load_data.py
 # 3. Run the analysis (writes analysis/results.json and analysis/rematch_games.csv)
 python analysis/rematch_analysis.py
 
-# 4. Build the working paper (requires a TeX distribution with pdflatex)
+# 4. Generate the chart (writes assets/rematch_win_rates.png)
+python visualization/plot_rematch_rates.py
+
+# 5. Build the working paper (requires a TeX distribution with pdflatex)
 cd docs
 pdflatex rematch_myth_mosp.tex
 pdflatex rematch_myth_mosp.tex   # second pass resolves table references
@@ -43,7 +46,11 @@ posts/rematch/
 │   ├── rematch_games.csv     # One row per rematch game (prior winner's perspective)
 │   └── results.json          # Every number reported in the paper
 │
-├── assets/                   # Generated outputs (charts, graphics)
+├── visualization/            # Output generation
+│   └── plot_rematch_rates.py # Rematch win-rate chart
+│
+├── assets/                   # Generated outputs
+│   └── rematch_win_rates.png # Rematch win rate by situation
 └── docs/                     # LaTeX report
     ├── rematch_myth_mosp.tex # Working paper source
     └── rematch_myth_mosp.pdf # Compiled working paper
@@ -99,6 +106,7 @@ Verdict: **Grade-A Broadcast Mythology.**
 
 | File | Description |
 |------|-------------|
+| `assets/rematch_win_rates.png` | Rematch win rate by situation (money chart) |
 | `analysis/results.json` | All model estimates, records and intervals |
 | `analysis/rematch_games.csv` | Rematch game-level dataset |
 | `docs/rematch_myth_mosp.pdf` | Full scientific report |

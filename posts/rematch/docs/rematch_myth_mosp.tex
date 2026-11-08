@@ -137,6 +137,12 @@ For each rematch game $g$ between prior winner $i$ and prior loser $j$, we estim
 \end{equation}
 where $W_g$ indicates a team win, $\Delta\text{EPA}_g = \text{LOOO-EPA}_{i,j} - \text{LOOO-EPA}_{j,i}$, $\text{Home}_g$ is a home-field indicator, and $\text{Rematch}_g$ indicates that the team won the prior meeting. Each rematch enters the model twice, once per team, with $\text{Rematch}_g = 1$ for the prior winner and $0$ for the prior loser. Because the two rows mirror each other, $\alpha$ is pinned at zero, and we estimate the model on one row per game from the prior winner's perspective, with $\text{Home}_g$ coded $+1$ (home), $-1$ (away) or $0$ (neutral site). The comparison is therefore between the prior winner's actual rematch result and the result predicted by quality and venue alone. Under H1, $\gamma < 0$. A companion OLS model with the prior winner's point margin as the outcome asks the same question of the scoreboard. H2 is tested separately (Section~5.2).
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.82\textwidth]{../assets/rematch_win_rates.png}
+\caption{Rematch win rate of the prior-meeting winner, by situation, with 95\% Wilson intervals.}
+\label{fig:rates}
+\end{figure*}
 \subsection{Control Variables: The Venue Alternation Problem}
 Divisional series alternate venues. Because home teams win more often, Game~1 winners are disproportionately teams that were \textit{at home} in Game~1, and are therefore disproportionately \textit{on the road} in Game~2. In our divisional sample, 53.3\% of Game~1 winners played Game~2 away from home. Those playing Game~2 at home won 64.5\% of rematches; those on the road won 51.8\%.
 
@@ -212,7 +218,7 @@ The gap is explained by quality. Fluke winners held essentially no LOOO-EPA edge
 %==========================================================
 \section{Conclusion}
 %==========================================================
-Based on $1{,}299$ rematch games and econometric controls for quality and venue, the Ministry of Silly Plots officially classifies \textit{``It's tough to beat a team twice''} as \textbf{Grade-A Broadcast Mythology}. It is tough to beat a \textit{better} team twice. It is tough to beat a team twice \textit{on the road}. It is tough to win a second turnover lottery. It is not especially tough to beat a team twice.
+Figure~\ref{fig:rates} summarizes the evidence. Rematch outcomes track quality and venue; the prior meeting adds nothing the booth would recognize as a curse. Based on $1{,}299$ rematch games and econometric controls for quality and venue, the Ministry of Silly Plots officially classifies \textit{``It's tough to beat a team twice''} as \textbf{Grade-A Broadcast Mythology}. It is tough to beat a \textit{better} team twice. It is tough to beat a team twice \textit{on the road}. It is tough to win a second turnover lottery. It is not especially tough to beat a team twice.
 
 %==========================================================
 \section{Code Artifacts \& Reproducibility}

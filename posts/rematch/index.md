@@ -82,6 +82,13 @@ Fluke winners went on to lose the rematch more often than not, going **14-17 (45
 
 It is also fully explained by quality. Fluke winners had essentially no quality edge over their opponents, and once quality is accounted for, being a fluke winner makes no measurable difference to the rematch. Fluke winners lose at exactly the rate their quality predicts. This is not because beating a team twice is hard. It is because the fluke winners were never the better team, and the bounces stopped bouncing. Observing these teams, the booth has mistaken regression to the mean for a law of nature.
 
+<div style="text-align: center; margin: 30px 0;">
+  <img src="/posts/rematch/assets/rematch_win_rates.png" alt="Rematch win rate of the prior-meeting winner, by situation" style="max-width: 700px; width: 100%; border-radius: 8px; border: 1px solid #ddd; display: inline-block;">
+  <p style="font-style: italic; color: #666; margin-top: 10px;">Rematch win rate of the prior-meeting winner, by situation.</p>
+</div>
+
+Taken together, the picture is consistent. Who wins a rematch depends on who is better and who is at home. Whether they have met before does not enter into it.
+
 ## Verdict
 
 Based on 1,299 rematch games and controls for quality and venue, the Ministry of Silly Plots officially classifies *"It's tough to beat a team twice"* as **Grade-A Broadcast Mythology**.
