@@ -25,6 +25,7 @@ exclude:
   - requirements.txt
   - migrate_content.py
   - vendor
+  - posts/*/marketing_kit
 
 social:
   twitter: https://twitter.com/sillyplots
