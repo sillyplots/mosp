@@ -1,4 +1,6 @@
-# Rematch: Social Media Plan
+# Rematch: Reddit Plan
+
+Reddit only (Minister's call, 2026-11-08). No X or Bluesky for this post.
 
 **Post:** https://sillyplots.com/post/rematch
 **Money chart:** `assets/rematch_win_rates.png` (same file as the post)
@@ -7,10 +9,11 @@
 
 ## Schedule
 
+All copy is in `reddit/reddit_posts.md`.
+
 | When | Where | Angle | Copy |
 |---|---|---|---|
 | Today, before ~3:30 PM ET | r/Seahawks | Game-day: "the booth will say it today" | `reddit/reddit_posts.md` |
-| Today, before kickoff | Bluesky + X | Thread with chart, game-day hook | `bluesky/`, `twitter/` |
 | Today or Mon/Tue morning ET | r/dataisbeautiful | The chart, evergreen | `reddit/reddit_posts.md` |
 | Mon/Tue (after the result is known) | r/nfl | Self-post, findings + result of the field test | `reddit/reddit_posts.md` |
 | Same week | r/NFLstatheads, r/sportsanalytics | Methods-first; invite critique | `reddit/reddit_posts.md` |
@@ -24,7 +27,6 @@ Stagger Reddit posts by at least a day. Posting the same link to many subreddits
 - **r/nfl:** large but strict. Submissions must "add to discussion"; bare blog links tend to be removed. Use a self-post with the findings inline and the chart, and the blog link at the bottom. Read the current sidebar first, and consider messaging the mods.
 - **r/Seahawks / r/AZCardinals:** team subs are friendlier to fun analysis, especially on game day. Avoid posting inside the official game thread unless the sub allows it.
 - **r/NFLstatheads, r/sportsanalytics:** smaller, methods-minded audiences. Lead with LOOO-EPA, the positive γ and the fluke-winner test. They will poke at the method; that's the point.
-- **nflverse community:** the analysis runs on their data. Credit them in the Bluesky/X thread; they sometimes share community work.
 
 ## Reddit account hygiene
 
