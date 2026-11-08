@@ -85,7 +85,9 @@
         47.8,
         55.7
       ]
-    }
+    },
+    "balanced_venue_rate": 58.2,
+    "naive_rate_shift_pp": 0.35
   },
   "logit": {
     "beta": {
@@ -181,6 +183,24 @@
         60.6
       ]
     },
-    "blowout_definition": "Won Game 1 by 17+ points"
+    "blowout_definition": "Won Game 1 by 17+ points",
+    "fluke_vs_blowout_p": 0.03,
+    "mean_d_epa": {
+      "fluke": -0.007,
+      "blowout": 0.102,
+      "all": 0.052
+    },
+    "controlled_logit": {
+      "fluke": {
+        "coef": -0.097,
+        "se": 0.389,
+        "p": 0.804
+      },
+      "blowout": {
+        "coef": 0.136,
+        "se": 0.144,
+        "p": 0.344
+      }
+    }
   }
 }

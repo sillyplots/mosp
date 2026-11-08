@@ -53,7 +53,7 @@ We measure quality with **Leave-One-Opponent-Out EPA**: each team's net expected
 
 The estimated rematch penalty is **γ = +0.12 (p = 0.07)**. It has the wrong sign. Prior winners win about 2.8 points more often than their quality and venue predict, with a 95% confidence interval running from 0.2 points worse to 5.8 points better.
 
-This has a mundane explanation. Our quality measure deliberately ignores the head-to-head games, so the result of the first meeting still carries some information about the matchup. Having beaten a team is, if anything, mild evidence that one can beat them again.
+The most likely explanation is mundane. Our quality measure deliberately ignores the head-to-head games, so the result of the first meeting probably still carries some information about the matchup. Having beaten a team is, if anything, mild evidence that one can beat them again.
 
 In the interest of scholarly integrity, we note that the interval does not quite exclude zero. It does exclude any penalty larger than a fraction of a point, and it rules out the booth's preferred magnitude, which is "almost impossible."
 
@@ -63,7 +63,7 @@ Divisional opponents alternate home games. Home teams win more often, so the win
 
 In our sample, 53.3% of divisional Game 1 winners played Game 2 on the road. Those who got the rematch at home won 64.5% of the time. Those on the road won 51.8%.
 
-This mechanically suppresses the naive rematch rate. The booth has, in effect, rediscovered home-field advantage and mistaken it for a curse.
+The imbalance is mild: it lowers the overall rematch rate by less than half a point. The effect within each game is not. A prior winner playing the rematch on the road is barely better than a coin flip, and these are the games that supply the booth with its anecdotes. The booth has, in effect, rediscovered home-field advantage and mistaken it for a curse.
 
 ## Familiarity
 
@@ -78,9 +78,9 @@ Not every Game 1 winner was the better team on the day. We separated **fluke win
   <p style="font-size: 0.8em; color: #666; margin-top: 5px;"><em>Table 3: Rematch Win Rate by Game 1 Profile</em></p>
 </div>
 
-Fluke winners went on to lose the rematch more often than not, going **14-17 (45.2%)**. Blowout winners won **64.9%**. The fluke sample is small and its interval is wide; the gap between the two groups is not.
+Fluke winners went on to lose the rematch more often than not, going **14-17 (45.2%)**. Blowout winners won **64.9%**. The fluke sample is small and its interval is wide, but the gap between the two groups is statistically real (p = 0.03).
 
-This is not because beating a team twice is hard. It is because the fluke winners were never the better team, and the bounces stopped bouncing. Observing these teams, the booth has mistaken regression to the mean for a law of nature.
+It is also fully explained by quality. Fluke winners had essentially no quality edge over their opponents, and once quality is accounted for, being a fluke winner makes no measurable difference to the rematch. Fluke winners lose at exactly the rate their quality predicts. This is not because beating a team twice is hard. It is because the fluke winners were never the better team, and the bounces stopped bouncing. Observing these teams, the booth has mistaken regression to the mean for a law of nature.
 
 ## Verdict
 

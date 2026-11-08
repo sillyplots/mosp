@@ -264,6 +264,23 @@ def main():
     res["strata"] = {"fluke": record(fluke), "blowout": record(blow), "base": record(s),
                      "blowout_definition": f"Won Game 1 by {BLOWOUT_MARGIN}+ points"}
 
+    # Is the fluke/blowout gap real, and is it explained by team quality?
+    from statsmodels.stats.proportion import proportions_ztest
+    z, pz = proportions_ztest([fluke.win.sum(), blow.win.sum()], [len(fluke), len(blow)])
+    s = s.assign(fluke=s.index.isin(fluke.index).astype(int), blowout=s.index.isin(blow.index).astype(int))
+    q = s[s.d_epa.notna()]
+    fit = sm.Logit(q.win, sm.add_constant(q[["d_epa", "home", "fluke", "blowout"]])).fit(disp=0)
+    res["strata"]["fluke_vs_blowout_p"] = round(pz, 3)
+    res["strata"]["mean_d_epa"] = {"fluke": round(fluke.d_epa.mean(), 3), "blowout": round(blow.d_epa.mean(), 3),
+                                   "all": round(s.d_epa.mean(), 3)}
+    res["strata"]["controlled_logit"] = {k: coefs(fit, k) for k in ["fluke", "blowout"]}
+
+    # How much does venue imbalance move the naive divisional rate?
+    home_rate = d[d.home == 1].win.mean()
+    away_rate = d[d.home == -1].win.mean()
+    res["venue_alternation"]["balanced_venue_rate"] = round(100 * (home_rate + away_rate) / 2, 1)
+    res["venue_alternation"]["naive_rate_shift_pp"] = round(100 * ((home_rate + away_rate) / 2 - d.win.mean()), 2)
+
     with open(os.path.join(HERE, "results.json"), "w") as f:
         json.dump(res, f, indent=2, default=lambda o: o.item() if hasattr(o, "item") else str(o))
     print(json.dumps(res, indent=2, default=lambda o: o.item() if hasattr(o, "item") else str(o)))

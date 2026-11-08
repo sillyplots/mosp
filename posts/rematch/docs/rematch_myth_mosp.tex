@@ -135,12 +135,12 @@ For each rematch game $g$ between prior winner $i$ and prior loser $j$, we estim
 &+ \gamma\,\text{Rematch}_{g} + \varepsilon_{g}
 \end{split}
 \end{equation}
-where $W_g$ indicates a team win, $\Delta\text{EPA}_g = \text{LOOO-EPA}_{i,j} - \text{LOOO-EPA}_{j,i}$, $\text{Home}_g$ is a home-field indicator, and $\text{Rematch}_g$ indicates that the team won the prior meeting. Each rematch enters the model twice, once per team, with $\text{Rematch}_g = 1$ for the prior winner and $0$ for the prior loser. Because the two rows mirror each other, $\alpha$ is pinned at zero, and we estimate the model on one row per game from the prior winner's perspective, with $\text{Home}_g$ coded $+1$ (home), $-1$ (away) or $0$ (neutral site). The comparison is therefore between the prior winner's actual rematch result and the result predicted by quality and venue alone. Under H1, $\gamma < 0$. A companion OLS model with point margin as the outcome tests H2.
+where $W_g$ indicates a team win, $\Delta\text{EPA}_g = \text{LOOO-EPA}_{i,j} - \text{LOOO-EPA}_{j,i}$, $\text{Home}_g$ is a home-field indicator, and $\text{Rematch}_g$ indicates that the team won the prior meeting. Each rematch enters the model twice, once per team, with $\text{Rematch}_g = 1$ for the prior winner and $0$ for the prior loser. Because the two rows mirror each other, $\alpha$ is pinned at zero, and we estimate the model on one row per game from the prior winner's perspective, with $\text{Home}_g$ coded $+1$ (home), $-1$ (away) or $0$ (neutral site). The comparison is therefore between the prior winner's actual rematch result and the result predicted by quality and venue alone. Under H1, $\gamma < 0$. A companion OLS model with the prior winner's point margin as the outcome asks the same question of the scoreboard. H2 is tested separately (Section~5.2).
 
 \subsection{Control Variables: The Venue Alternation Problem}
 Divisional series alternate venues. Because home teams win more often, Game~1 winners are disproportionately teams that were \textit{at home} in Game~1, and are therefore disproportionately \textit{on the road} in Game~2. In our divisional sample, 53.3\% of Game~1 winners played Game~2 away from home. Those playing Game~2 at home won 64.5\% of rematches; those on the road won 51.8\%.
 
-This alone mechanically suppresses the naive rematch rate, and may account for much of the folklore. The booth has, in effect, rediscovered home-field advantage and mistaken it for a curse.
+The imbalance itself is mild. Had Game~1 winners been split evenly between home and road rematches, the naive divisional rate would rise by only $0.35$ points, to 58.2\%. The venue effect within each game is not mild: a prior winner on the road is barely better than a coin flip. These road rematches supply the booth with its anecdotes. The booth has, in effect, rediscovered home-field advantage and mistaken it for a curse.
 
 %==========================================================
 \section{Results}
@@ -173,7 +173,7 @@ Pseudo-$R^2$ / $R^2$       & $0.086$ & $0.174$ \\
 
 The estimated rematch penalty is $\hat\gamma = +0.12$ ($p = 0.07$; 95\% CI $-0.01$ to $+0.24$ on the log-odds scale). It has the wrong sign. Evaluated at the sample mean, it corresponds to a change in rematch win probability of $+2.8$ percentage points, with a 95\% interval of $-0.2$ to $+5.8$. The margin model agrees: prior winners outscore their predicted margin by $0.84$ points ($p = 0.03$).
 
-The positive estimate has a mundane explanation. LOOO-EPA deliberately discards the head-to-head games, so the result of the prior meeting retains some information about how the two teams match up. Having beaten a team is, if anything, mild evidence that one can beat them again.
+The most likely explanation for the positive estimate is mundane. LOOO-EPA deliberately discards the head-to-head games, so the result of the prior meeting probably retains some information about how the two teams match up. Having beaten a team is, if anything, mild evidence that one can beat them again.
 
 We note, in the interest of scholarly integrity, that the interval does not quite exclude zero. It does exclude any penalty larger than a fraction of a point, and it rules out the booth's preferred magnitude, which is ``almost impossible.''
 
@@ -203,9 +203,11 @@ Blowout winner$^{b}$ & 319 & 64.9 & 59.5--69.9 \\
 \end{tabular}
 \end{table}
 
-Teams that won Game~1 by winning the turnover lottery go on to lose the rematch more often than not (14--17). The sample is small and the interval wide, but the contrast with blowout winners is not. This is not because beating a team twice is hard. It is because they were never the better team, and the bounces stopped bouncing. The booth, observing these teams, has mistaken regression to the mean for a law of nature.
+Teams that won Game~1 by winning the turnover lottery go on to lose the rematch more often than not (14--17). The fluke sample is small and its interval wide, but the gap to blowout winners is statistically distinguishable ($p = 0.03$, two-proportion test).
 
-\noindent\textbf{Conclusion: H3 is Empirically Validated.}
+The gap is explained by quality. Fluke winners held essentially no LOOO-EPA edge over their opponents (mean $\Delta\text{EPA} = -0.007$, against $+0.102$ for blowout winners). Adding fluke and blowout indicators to the logit model leaves both indistinguishable from zero ($p = 0.80$ and $p = 0.34$). Fluke winners lose rematches at exactly the rate their quality predicts. This is not because beating a team twice is hard. It is because they were never the better team, and the bounces stopped bouncing. The booth, observing these teams, has mistaken regression to the mean for a law of nature.
+
+\noindent\textbf{Conclusion: H3 is Supported.}
 
 %==========================================================
 \section{Conclusion}
