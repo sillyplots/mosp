@@ -69,7 +69,7 @@ def main():
     for side in ax.spines.values():
         side.set_visible(False)
 
-    fig.text(0.02, 0.965, "It's not that tough to beat a team twice", fontsize=16, fontweight="bold", color=INK,
+    fig.text(0.02, 0.965, "Turns out it's not tough to beat a team twice", fontsize=16, fontweight="bold", color=INK,
              ha="left", va="top")
     fig.text(0.02, 0.905, "Rematch win rate of the team that won the prior meeting, with 95% intervals",
              fontsize=10.5, color=INK_2, ha="left", va="top")
