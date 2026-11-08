@@ -2,7 +2,7 @@
 
 **An Econometric Autopsy of Broadcast Booth Folklore**
 
-This project tests the broadcast claim that it is hard to beat the same NFL team twice (or three times) in one season, using 1,165 same-season rematch games and a quality-controlled model of rematch outcomes.
+This project tests the broadcast claim that it is hard to beat the same NFL team twice (or three times) in one season, using 1,299 same-season rematch games and a quality-controlled model of rematch outcomes.
 
 Published at [sillyplots.com/post/rematch](https://sillyplots.com/post/rematch).
 
@@ -54,9 +54,9 @@ posts/rematch/
 ### Sample
 
 Three families of same-season rematches:
-- **Regular-season divisional series** (2002 onward): Game 2 of each divisional pair (n = 1,019)
-- **Non-divisional playoff rematches** (2002 onward): a playoff game against a regular-season opponent (n = 121)
-- **Three-game sweep attempts** (1970 onward): a team that swept a divisional rival 2-0 meets it again in the playoffs (n = 25)
+- **Regular-season divisional series** (2002-2025): Game 2 of each divisional pair (n = 1,145; series with a tied game excluded)
+- **Non-divisional playoff rematches** (2002-2025): a playoff game against a regular-season opponent (n = 129)
+- **Three-game sweep attempts** (1970-2025): a team that swept a divisional rival 2-0 meets it again in the playoffs (n = 25)
 
 ### Leave-One-Opponent-Out EPA
 
@@ -69,22 +69,23 @@ LOOO-EPA(i, j) = EPA_off(i, -j) - EPA_def(i, -j)
 ### Rematch Model
 
 ```
-logit P(W_g = 1) = α + β·ΔEPA_g + δ·Home_g + γ·Rematch_g
+logit P(prior winner wins) = γ + β·ΔEPA_g + δ·Home_g
 ```
 
 Where:
-- `ΔEPA_g` = LOOO-EPA gap between the two teams
-- `Home_g` = home-field indicator
-- `Rematch_g` = team won the prior meeting
+- `ΔEPA_g` = LOOO-EPA gap (prior winner minus prior loser)
+- `Home_g` = +1 if the prior winner is at home, -1 if away, 0 at a neutral site
+- `γ` = the rematch effect: the prior winner's edge beyond quality and venue
 
-Under the booth hypothesis, `γ < 0`. A companion OLS model with point margin as the outcome tests whether rematches are closer.
+One row per rematch game, from the prior winner's perspective. This is equivalent to a two-row-per-game model with a `Rematch` indicator, where the intercept is pinned at zero by symmetry. Under the booth hypothesis, `γ < 0`. A companion OLS model with point margin as the outcome tests whether rematches are closer.
 
 ### Key Finding
 
-- **Prior-game winners win 58.5%** of 1,165 rematch games (682-483)
+- **Prior-game winners win 57.9%** of 1,299 rematch games (752-547)
 - **Three-game sweep attempts are 16-9** (64.0%, 95% CI 44.5-79.8%)
-- **Rematch penalty γ = -0.04, p = 0.68** (95% CI -5.6 to +3.6 points of win probability)
-- **Fluke Game 1 winners** win 46.2% of rematches; **blowout winners** win 67.5%
+- **Rematch effect γ = +0.12, p = 0.07** (95% CI -0.2 to +5.8 points of win probability): no penalty
+- **Rematch margins are 0.6 points wider** than first meetings (p = 0.10): no familiarity effect
+- **Fluke Game 1 winners** win 45.2% of rematches (n = 31); **blowout winners** (17+ points) win 64.9% (n = 319)
 
 Verdict: **Grade-A Broadcast Mythology.**
 
@@ -92,7 +93,7 @@ Verdict: **Grade-A Broadcast Mythology.**
 
 - **Play-by-Play Data**: [nflverse](https://nflverse.nflverse.com/) (`nflverse-data` releases)
 - **Pre-1999 Results**: [FiveThirtyEight NFL Elo game data](https://github.com/fivethirtyeight/nfl-elo-game)
-- **Seasons**: 2002 onward (divisional and playoff rematches); 1970 onward (three-game sweep attempts)
+- **Seasons**: 2002-2025 (divisional and playoff rematches); 1970-2025 (three-game sweep attempts)
 
 ## Outputs
 

@@ -50,7 +50,7 @@
     \maketitle
     \vspace{-1em}
     \begin{abstract}
-      \noindent Every January, normally functional adults wearing quarter-zips on national television look directly into a camera and intone one of civilization's most cherished falsehoods: \textit{``You know, Jim, it is almost impossible to beat a team three times in one season.''} This paper investigates the ``Tough to Beat a Team Twice (or Thrice)'' hypothesis across $1{,}165$ same-season NFL rematch games. Following our previous inquiry into the \textit{Home Brew Advantage}---which forecast a Seahawks victory in Super Bowl LX on the grounds that Levi's Stadium is the second most Starbucks-dominant venue in the league ($G_{\text{net}} = -5.80$)---we once again deploy serious econometric machinery against a defenseless sports narrative. Teams that won the prior meeting win the rematch \textbf{58.5\%} of the time overall. Controlling for roster quality via a Leave-One-Opponent-Out Expected Points Added ($\text{LOOO-EPA}$) logistic model and for venue alternation, the estimated rematch penalty is statistically indistinguishable from zero ($\hat\gamma = -0.04$, $p = 0.68$). It turns out that being better at football in October remains a remarkably durable asset in December.
+      \noindent Every January, normally functional adults wearing quarter-zips on national television look directly into a camera and intone one of civilization's most cherished falsehoods: \textit{``You know, Jim, it is almost impossible to beat a team three times in one season.''} This paper investigates the ``Tough to Beat a Team Twice (or Thrice)'' hypothesis across $1{,}299$ same-season NFL rematch games. Following our previous inquiry into the \textit{Home Brew Advantage}---which forecast a Seahawks victory in Super Bowl LX on the grounds that Levi's Stadium is the second most Starbucks-dominant venue in the league ($G_{\text{net}} = -5.80$)---we once again deploy serious econometric machinery against a defenseless sports narrative. Teams that won the prior meeting win the rematch \textbf{57.9\%} of the time overall. Controlling for roster quality via a Leave-One-Opponent-Out Expected Points Added ($\text{LOOO-EPA}$) logistic model and for venue alternation, no rematch penalty is found: the estimate is slightly positive and statistically indistinguishable from zero ($\hat\gamma = +0.12$, $p = 0.07$). It turns out that being better at football in October remains a remarkably durable asset in December.
       \vspace{0.8em}
 
       \noindent \textbf{Keywords:} NFL Analytics, Broadcast Clich\'{e}s, Conditional Probability Malpractice, Leave-One-Out EPA, Regression to the Mean, Quarter-Zip Epistemology.
@@ -82,18 +82,18 @@ We propose the following hypotheses:
 %==========================================================
 Our sample comprises three families of same-season rematches:
 \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item \textbf{Regular-season divisional series}, 2002--\TBD{end season} ($n = 1{,}019$ Game~2s). \TBD{State inclusion rules: 48 pairs per season does not yield 1,019 for any contiguous season range; document exclusions, e.g.\ ties.}
-  \item \textbf{Non-divisional playoff rematches}, 2002--\TBD{end season}, in which a team met a regular-season opponent again in the postseason ($n = 121$).
-  \item \textbf{Three-game sweep attempts}, 1970--\TBD{end season}, in which a team swept a divisional rival $2\text{--}0$ and met it a third time in the playoffs ($n = 25$).
+  \item \textbf{Regular-season divisional series}, 2002--2025 ($n = 1{,}145$ Game~2s). Twenty-four seasons of 48 divisional pairs yield $1{,}152$ series; we exclude 6 in which Game~1 was tied (no prior winner) and 1 in which Game~2 was tied.
+  \item \textbf{Non-divisional playoff rematches}, 2002--2025, in which a team met a regular-season opponent again in the postseason ($n = 129$).
+  \item \textbf{Three-game sweep attempts}, 1970--2025, in which a team swept a divisional rival $2\text{--}0$ and met it a third time in the playoffs ($n = 25$; the earliest occurs in 1982, the latest in 2022).
 \end{itemize}
-Because post-2002 sweep attempts also appear in the divisional sample as Game~2 observations, we refer to $1{,}165$ rematch \textit{games} rather than independent series.
+Because post-2002 sweep attempts also appear in the divisional sample as Game~2 observations, we refer to $1{,}299$ rematch \textit{games} rather than independent series.
 
-Game data were sourced from nflverse play-by-play data via BigQuery. \TBD{Confirm source for pre-1999 games: nflverse EPA begins in 1999, so the 1970--1998 sweep attempts have no LOOO-EPA and are excluded from the regression in Section~4.}
+Game results and play-by-play data for 1999--2025 were sourced from nflverse. Results for 1970--1998 come from FiveThirtyEight's public NFL game file. Because nflverse EPA begins in 1999, the 12 sweep attempts from 1970--1998 have no LOOO-EPA and are excluded from the regression in Section~4.
 
 %==========================================================
 \section{The Naive Data: A Massacre of Conventional Wisdom}
 %==========================================================
-Table~\ref{tab:naive} reports raw rematch records. Across all $1{,}165$ rematch games, the winner of the prior meeting won \textbf{58.5\%} of the time: $+8.5$ percentage points ($+17.0\%$ relative) above a coin flip.
+Table~\ref{tab:naive} reports raw rematch records. Across all $1{,}299$ rematch games, the winner of the prior meeting won \textbf{57.9\%} of the time: $+7.9$ percentage points ($+15.8\%$ relative) above a coin flip.
 
 \begin{table}[h]
 \centering
@@ -104,18 +104,18 @@ Table~\ref{tab:naive} reports raw rematch records. Across all $1{,}165$ rematch 
 \toprule
 \textbf{Rematch type} & \textbf{W--L} & \textbf{Win\%} & \textbf{95\% CI} \\
 \midrule
-Divisional (Game 2)     & 596--423 & 58.5 & \TBD{CI} \\
-Playoff, non-div.       & 70--51   & 57.9 & \TBD{CI} \\
+Divisional (Game 2)     & 662--483 & 57.8 & 54.9--60.6 \\
+Playoff, non-div.       & 74--55   & 57.4 & 48.7--65.6 \\
 Three-game sweep        & 16--9    & 64.0 & 44.5--79.8 \\
 \midrule
-\textbf{All rematches}  & 682--483 & \textbf{58.5} & \TBD{CI} \\
+\textbf{All rematches}  & 752--547 & \textbf{57.9} & 55.2--60.5 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The three-game sweep figure, so beloved of January pregame shows, rests on 25 observations. Its confidence interval comfortably contains both the overall rematch rate and, for that matter, a coin flip. We report it because the booth insists on discussing it, not because it tells us much.
 
-Of course, a 58.5\% rematch rate does not by itself refute the booth. Good teams win Game~1, and good teams also win Game~2. To isolate the effect of \textit{having beaten this particular opponent}, we must hold team quality constant.
+Of course, a 57.9\% rematch rate does not by itself refute the booth. Good teams win Game~1, and good teams also win Game~2. To isolate the effect of \textit{having beaten this particular opponent}, we must hold team quality constant.
 
 %==========================================================
 \section{Methodology: The Econometric Autopsy}
@@ -135,10 +135,10 @@ For each rematch game $g$ between prior winner $i$ and prior loser $j$, we estim
 &+ \gamma\,\text{Rematch}_{g} + \varepsilon_{g}
 \end{split}
 \end{equation}
-where $W_g$ indicates a team win, $\Delta\text{EPA}_g = \text{LOOO-EPA}_{i,j} - \text{LOOO-EPA}_{j,i}$, $\text{Home}_g$ is a home-field indicator, and $\text{Rematch}_g$ indicates that the team won the prior meeting. \TBD{Confirm the exact construction of the Rematch indicator and the comparison sample used to identify $\gamma$.} Under H1, $\gamma < 0$. A companion OLS model with point margin as the outcome tests H2.
+where $W_g$ indicates a team win, $\Delta\text{EPA}_g = \text{LOOO-EPA}_{i,j} - \text{LOOO-EPA}_{j,i}$, $\text{Home}_g$ is a home-field indicator, and $\text{Rematch}_g$ indicates that the team won the prior meeting. Each rematch enters the model twice, once per team, with $\text{Rematch}_g = 1$ for the prior winner and $0$ for the prior loser. Because the two rows mirror each other, $\alpha$ is pinned at zero, and we estimate the model on one row per game from the prior winner's perspective, with $\text{Home}_g$ coded $+1$ (home), $-1$ (away) or $0$ (neutral site). The comparison is therefore between the prior winner's actual rematch result and the result predicted by quality and venue alone. Under H1, $\gamma < 0$. A companion OLS model with point margin as the outcome tests H2.
 
 \subsection{Control Variables: The Venue Alternation Problem}
-Divisional series alternate venues. Because home teams win more often, Game~1 winners are disproportionately teams that were \textit{at home} in Game~1, and are therefore disproportionately \textit{on the road} in Game~2. In our divisional sample, \TBD{X\%} of Game~1 winners played Game~2 away from home.
+Divisional series alternate venues. Because home teams win more often, Game~1 winners are disproportionately teams that were \textit{at home} in Game~1, and are therefore disproportionately \textit{on the road} in Game~2. In our divisional sample, 53.3\% of Game~1 winners played Game~2 away from home. Those playing Game~2 at home won 64.5\% of rematches; those on the road won 51.8\%.
 
 This alone mechanically suppresses the naive rematch rate, and may account for much of the folklore. The booth has, in effect, rediscovered home-field advantage and mistaken it for a curse.
 
@@ -157,30 +157,32 @@ This alone mechanically suppresses the naive rematch rate, and may account for m
  & \textbf{(1) Logit} & \textbf{(2) OLS} \\
  & Win & Margin \\
 \midrule
-$\Delta$LOOO-EPA ($\beta$) & \TBD{coef} & \TBD{coef} \\
-                           & \TBD{(se)} & \TBD{(se)} \\
-Home ($\delta$)            & \TBD{coef} & \TBD{coef} \\
-                           & \TBD{(se)} & \TBD{(se)} \\
-Rematch ($\gamma$)         & $-0.04$    & \TBD{coef} \\
-                           & $(0.097)^{\dagger}$ & \TBD{(se)} \\
+$\Delta$LOOO-EPA ($\beta$) & $4.74$ & $37.93$ \\
+                           & $(0.45)$ & $(2.57)$ \\
+Home ($\delta$)            & $0.27$ & $2.38$ \\
+                           & $(0.06)$ & $(0.37)$ \\
+Rematch ($\gamma$)         & $0.12$ & $0.84$ \\
+                           & $(0.06)$ & $(0.40)$ \\
 \midrule
-$N$                        & \TBD{N}    & \TBD{N} \\
-Pseudo-$R^2$ / $R^2$       & \TBD{}     & \TBD{} \\
+$N$                        & $1{,}287$ & $1{,}287$ \\
+Pseudo-$R^2$ / $R^2$       & $0.086$ & $0.174$ \\
 \bottomrule
-\multicolumn{3}{@{}p{0.92\columnwidth}@{}}{\footnotesize $^{\dagger}$Implied by the reported $p = 0.68$; \TBD{replace with model output}.}
+\multicolumn{3}{@{}p{0.92\columnwidth}@{}}{\footnotesize Rematch games 2002--2025 and sweep attempts 1999--2025 with play-by-play data. $\gamma$ is the prior-winner intercept (Section~4.2).}
 \end{tabular}
 \end{table}
 
-The estimated rematch penalty is $\hat\gamma = -0.04$ ($p = 0.68$; 95\% CI $-0.23$ to $0.15$ on the log-odds scale). Evaluated at the sample mean, this corresponds to a change in rematch win probability of between $-5.6$ and $+3.6$ percentage points.
+The estimated rematch penalty is $\hat\gamma = +0.12$ ($p = 0.07$; 95\% CI $-0.01$ to $+0.24$ on the log-odds scale). It has the wrong sign. Evaluated at the sample mean, it corresponds to a change in rematch win probability of $+2.8$ percentage points, with a 95\% interval of $-0.2$ to $+5.8$. The margin model agrees: prior winners outscore their predicted margin by $0.84$ points ($p = 0.03$).
 
-We note, in the interest of scholarly integrity, that this interval does not rule out a modest penalty. It does rule out the booth's preferred magnitude, which is ``almost impossible.''
+The positive estimate has a mundane explanation. LOOO-EPA deliberately discards the head-to-head games, so the result of the prior meeting retains some information about how the two teams match up. Having beaten a team is, if anything, mild evidence that one can beat them again.
+
+We note, in the interest of scholarly integrity, that the interval does not quite exclude zero. It does exclude any penalty larger than a fraction of a point, and it rules out the booth's preferred magnitude, which is ``almost impossible.''
 
 \noindent\textbf{Conclusion: H1 is Not Supported.}
 
-\subsection{Familiarity (Mildly Confirmed)}
-Rematch point margins are \TBD{0.45--0.80} points narrower than first-meeting margins, conditional on quality. Familiarity may well compress the tails---fewer blowouts, fewer successful trick plays---but the compression is small and leaves the identity of the winner essentially unchanged.
+\subsection{Familiarity (Not Found)}
+Across $2{,}304$ divisional games, regressing the absolute point margin on a Game~2 indicator and the season-long EPA gap between the two teams, rematch margins are $0.60$ points \textit{wider} than first-meeting margins (95\% CI $-0.12$ to $+1.32$; $p = 0.10$; standard errors clustered by series), against a typical Game~1 margin of $11.2$ points. Familiarity does not visibly compress anything.
 
-\noindent\textbf{Conclusion: H2 is Weakly Supported, and Irrelevant.}
+\noindent\textbf{Conclusion: H2 is Not Supported.}
 
 \subsection{Fluke Winners and Regression to the Mean}
 Stratifying Game~1 winners by how they won exposes the mechanism behind the folklore (Table~\ref{tab:strata}).
@@ -194,21 +196,21 @@ Stratifying Game~1 winners by how they won exposes the mechanism behind the folk
 \toprule
 \textbf{Game 1 profile} & \textbf{$n$} & \textbf{Win\%} & \textbf{95\% CI} \\
 \midrule
-Fluke winner$^{a}$   & \TBD{n} & 46.2 & \TBD{CI} \\
-Blowout winner$^{b}$ & \TBD{n} & 67.5 & \TBD{CI} \\
+Fluke winner$^{a}$   & 31 & 45.2 & 29.2--62.2 \\
+Blowout winner$^{b}$ & 319 & 64.9 & 59.5--69.9 \\
 \bottomrule
-\multicolumn{4}{@{}p{0.92\columnwidth}@{}}{\footnotesize $^{a}$Won Game 1 while losing the EPA battle, with turnover margin $\geq +2$. $^{b}$\TBD{definition}.}
+\multicolumn{4}{@{}p{0.92\columnwidth}@{}}{\footnotesize $^{a}$Won Game 1 while losing the EPA battle, with turnover margin $\geq +2$. $^{b}$Won Game 1 by 17 or more points. Prior meetings 1999--2025 with play-by-play data.}
 \end{tabular}
 \end{table}
 
-Teams that won Game~1 by winning the turnover lottery go on to lose the rematch more often than not. This is not because beating a team twice is hard. It is because they were never the better team, and the bounces stopped bouncing. The booth, observing these teams, has mistaken regression to the mean for a law of nature.
+Teams that won Game~1 by winning the turnover lottery go on to lose the rematch more often than not (14--17). The sample is small and the interval wide, but the contrast with blowout winners is not. This is not because beating a team twice is hard. It is because they were never the better team, and the bounces stopped bouncing. The booth, observing these teams, has mistaken regression to the mean for a law of nature.
 
 \noindent\textbf{Conclusion: H3 is Empirically Validated.}
 
 %==========================================================
 \section{Conclusion}
 %==========================================================
-Based on $1{,}165$ rematch games and econometric controls for quality and venue, the Ministry of Silly Plots officially classifies \textit{``It's tough to beat a team twice''} as \textbf{Grade-A Broadcast Mythology}. It is tough to beat a \textit{better} team twice. It is tough to beat a team twice \textit{on the road}. It is tough to win a second turnover lottery. It is not especially tough to beat a team twice.
+Based on $1{,}299$ rematch games and econometric controls for quality and venue, the Ministry of Silly Plots officially classifies \textit{``It's tough to beat a team twice''} as \textbf{Grade-A Broadcast Mythology}. It is tough to beat a \textit{better} team twice. It is tough to beat a team twice \textit{on the road}. It is tough to win a second turnover lottery. It is not especially tough to beat a team twice.
 
 %==========================================================
 \section{Code Artifacts \& Reproducibility}
