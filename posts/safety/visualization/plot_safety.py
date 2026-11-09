@@ -20,7 +20,7 @@ td_face = res["value_of_a_score"]["td_face"]
 # 1. What each score is worth
 pr = res["proposal"]
 rows = [("Touchdown", td_face, e["td_net"]), ("Field goal", 3, e["fg_net"]),
-        ("Safety (current)", 2, pr["net_now_pooled"]), ("Safety (proposed)", td_face, pr["net_act"])]
+        ("Safety (current)", 2, pr["net_now_pooled"]), ("Safety (under the Act)", td_face, pr["net_act"])]
 fig, ax = plt.subplots(figsize=(8, 4.2), dpi=200)
 for i, (n, f, net) in enumerate(rows):
     y = len(rows) - 1 - i
@@ -53,7 +53,7 @@ cmap = LinearSegmentedColormap.from_list("div", [NEG, MID, POS])
 norm = TwoSlopeNorm(vmin=-6, vcenter=0, vmax=6)
 fig, axes = plt.subplots(1, 2, figsize=(12, 7.6), dpi=200, sharey=True)
 for ax, col, title in zip(axes, ["delta_now", "delta_td_rule"],
-                          ["Current rule: 2 points + free kick", "Proposed: defensive TD + kickoff"]):
+                          ["Current rule: 2 points + free kick", "Defensive Touchdown Act: TD + kickoff"]):
     m = g.pivot(index="lead", columns="secs", values=col)[secs] * 100
     ax.imshow(m.clip(-6, 6).values, cmap=cmap, norm=norm, aspect="auto", origin="lower")
     ax.set_xticks(range(len(secs)), [fmt(t) for t in secs], rotation=60, fontsize=8)
