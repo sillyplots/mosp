@@ -61,7 +61,7 @@ Every January, a broadcaster says it's almost impossible to beat a team three ti
 - Where the myth comes from: home field and regression to the mean. Prior winners playing the rematch on the road win only 51.8%. Teams that won Game 1 on a turnover fluke win only 45.2%, exactly what their quality predicts.
 - Rematches aren't closer, either. Margins are 0.6 points wider (not significant).
 
-**Field test:** Seattle beat Arizona 31-7 in Week 2. The model gave Seattle 63% in Sunday's rematch. [RESULT]
+**Field test:** Seattle beat Arizona 31-7 in Week 2. The model gave Seattle 63% in Sunday's rematch. Seattle won 17-3.
 
 [chart]
 
@@ -90,7 +90,7 @@ Write-up: https://sillyplots.com/post/rematch
 
 ---
 
-## r/AZCardinals (only if Arizona wins)
+## r/AZCardinals (only if Arizona wins) — NOT NEEDED: Seattle won 17-3
 
 **Title:** Our model gave Arizona a 37% chance today. We'd like to formally attribute the win to that, and not to the difficulty of beating a team twice.
 

@@ -34,5 +34,8 @@ Reddit's long-standing guidance is that self-promotion should be a small share o
 
 ## After the game
 
+**Result (Nov 8):** Seattle won 17-3. Result line added to the post; r/nfl copy updated; r/AZCardinals post dropped.
+
+
 - **Seattle wins:** add one line to the post ("The Seahawks won, X-Y."), then post to r/nfl with the result.
 - **Arizona wins:** add the same line, and lean into it: "Attributed, as instructed, to the 37% chance." The r/AZCardinals post becomes viable.
