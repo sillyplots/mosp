@@ -105,4 +105,6 @@ Applying our model to this season's Leave-One-Opponent-Out EPA and home field gi
 
 Should the Cardinals win, the Ministry asks that it not be attributed to the difficulty of beating a team twice. It should be attributed to the 37% chance that they win.
 
+**Result:** The Seahawks won, 17-3. They have now beaten the Cardinals twice this season. It did not appear to be tough.
+
 <a href="/posts/rematch/docs/rematch_myth_mosp.pdf" style="display: block; text-align: center; background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; margin: 20px auto; width: fit-content;">Read the Full Technical Paper (PDF)</a>
